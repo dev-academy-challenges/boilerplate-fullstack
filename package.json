@@ -1,0 +1,42 @@
+{
+  "name": "restful-react-from-scratch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server & yarn build --watch",
+    "build": "webpack --config client/webpack.config.js",
+    "test": "jest"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/client/config/jsdom.js",
+      "./test/client/config/enzyme.js"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3",
+    "jsdom": "^11.8.0",
+    "nodemon": "^1.17.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "superagent": "^3.8.2",
+    "webpack": "3"
+  }
+}
