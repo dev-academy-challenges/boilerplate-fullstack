@@ -4,5 +4,5 @@ module.exports = {
 
 function getFruits () {
   const fruits = ['banana', 'apple', 'feijoa']
-  return Promise.resove(fruits)
+  return Promise.resolve(fruits)
 }
