@@ -1,5 +1,6 @@
 import React from 'react'
 
+import {Link} from 'react-router-dom'
 import {getBets} from '../apiClient'
 
 class Bets extends React.Component {
@@ -18,10 +19,33 @@ class Bets extends React.Component {
   }
 
   render () {
+    const header = {
+      padding: '2%',
+      background: 'navy',
+      color: 'white',
+      width: '100%',
+      margin: 0
+    }
+    const body = {
+      background: 'lightGrey',
+      color: 'black',
+      width: '100%',
+      padding: '2%'
+    }
+    const nav = {
+      padding: '2%',
+      background: 'green',
+      color: 'white',
+      width: '100%'
+    }
+
     return (
-      <div className='container'>
-        <h1>Bets</h1>
-        <ul>
+      <div className="container">
+        <h1 style={header}>Bets</h1>
+        <div style={nav}>
+          <Link to="/"><button>Home</button></Link>
+        </div>
+        <ul style={body}>
           {this.state.bets.map(bets => (
             <li key={bets}>{bets}</li>
           ))}

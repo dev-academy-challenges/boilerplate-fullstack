@@ -1,15 +1,25 @@
 import React from 'react'
 
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export default function Home (props) {
-  const styles = {
-    padding: '2%'
+  const header = {
+    padding: '2%',
+    background: 'navy',
+    color: 'white'
+  }
+  const nav = {
+    padding: '2%',
+    background: 'green',
+    color: 'white'
   }
   return (
-    <div style={styles}>
-      <div className="row">
+    <div>
+      <div style={header}>
         <h1>Raro Punt Club</h1>
+      </div>
+      <div style={nav}>
+        <Link to="/bets"><button>Bets</button></Link>
       </div>
     </div>
   )
