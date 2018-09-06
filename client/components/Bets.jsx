@@ -19,7 +19,7 @@ class Bets extends React.Component {
 
   render () {
     return (
-      <div className='bets'>
+      <div className='container'>
         <h1>Bets</h1>
         <ul>
           {this.state.bets.map(bets => (
