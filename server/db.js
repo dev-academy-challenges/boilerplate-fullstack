@@ -1,8 +1,8 @@
 module.exports = {
-  getFruits
+  getBets
 }
 
-function getFruits () {
-  const fruits = ['banana', 'apple', 'feijoa']
-  return Promise.resolve(fruits)
+function getBets () {
+  const bets = ['horses', 'football', 'greyhounds']
+  return Promise.resolve(bets)
 }
