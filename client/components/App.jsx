@@ -1,34 +1,22 @@
 import React from 'react'
+import {HashRouter as Router, Route} from 'react-router-dom'
 
-import {getBets} from '../apiClient'
+import Home from './Home'
+import Nav from './Nav'
+import Bets from './Bets'
 
-class App extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      bets: []
-    }
-  }
-
-  componentDidMount () {
-    getBets()
-      .then(bets => {
-        this.setState({bets})
-      })
-  }
-
-  render () {
-    return (
-      <div className='app'>
-        <h1>Fullstack Boilerplate</h1>
-        <ul>
-          {this.state.bets.map(bets => (
-            <li key={bets}>{bets}</li>
-          ))}
-        </ul>
+const App = () => {
+  return (
+    <Router>
+      <div>
+        <div className="container">
+          <Route exact path='/bets' component={Bets} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={Nav} />
+        </div>
       </div>
-    )
-  }
+    </Router>
+  )
 }
 
 export default App

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon server & yarn build --watch",
     "build": "webpack --config client/webpack.config.js",
-    "test": "jest"
+    "test": "jest",
+    "knex": "knex"
   },
   "babel": {
     "presets": [
@@ -21,7 +22,10 @@
     ]
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "knex": "^0.15.2",
+    "react-router-dom": "^4.3.1",
+    "sqlite3": "^4.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
