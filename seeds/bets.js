@@ -9,4 +9,4 @@ exports.seed = (knex, Promise) => {
         {id: 4403, person: 'Hannah', couple: 'Scaglia/Scaglia', sport: '', bet: 'SF-Australia v New Zealand 6678 Head to Head-Live Now', amount_bet: '5', amount_won: '5.1', percentage: ''}
       ])
     })
-};
+}

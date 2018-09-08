@@ -1,0 +1,10 @@
+* { 
+  outline: 1px solid #947676 !important; 
+  } 
+  
+   * { 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    -ms-box-sizing: border-box; 
+    box-sizing: border-box; 
+    }
