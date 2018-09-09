@@ -49,7 +49,6 @@ class Addbet extends React.Component {
       background: '#8F8681',
       color: 'white',
       padding: '2%',
-      float: 'left',
       marginLeft: 0,
       marginRight: 0
     }
@@ -63,9 +62,12 @@ class Addbet extends React.Component {
         </div>
 
         <div style={form} className='form'>
-          <p>Couple: <input value="couple" name='couple' onChange={this.handleChange} /></p>
-          <p>Person: <input value="person" name='person' onChange={this.handleChange} /></p>
-          <p><button onClick={this.handleClick}>Add Bet</button></p>
+          <p style={{textAlign: 'left', width: '30%'}}>Couple: <input style={{float: 'right'}} name='couple' onChange={this.handleChange} /></p>
+          <p style={{textAlign: 'left', width: '30%'}}>Person: <input style={{float: 'right'}} name='person' onChange={this.handleChange} /></p>
+          <p style={{textAlign: 'left', width: '30%'}}>Bet: <input style={{float: 'right'}} name='bet' onChange={this.handleChange} /></p>
+          <p style={{textAlign: 'left', width: '30%'}}>Amount Bet: <input style={{float: 'right'}} name='amountBet' onChange={this.handleChange} /></p>
+          <p style={{textAlign: 'left', width: '30%'}}>Amount Won: <input style={{float: 'right'}} name='amountWon' onChange={this.handleChange} /></p>
+          <p style={{textAlign: 'left', width: '30%'}}><button onClick={this.handleClick}>Add Bet</button></p>
         </div>
       </div>
     )
