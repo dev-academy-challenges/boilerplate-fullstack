@@ -45,10 +45,6 @@ class Bets extends React.Component {
       width: '100%'
     }
 
-    const betId = this.state.bets.map(bet => {
-      return <p key={bet.id}>{bet.id}</p>
-    })
-
     const betPerson = this.state.bets.map(bet => {
       return <p key={bet.id}>{bet.person}</p>
     })
