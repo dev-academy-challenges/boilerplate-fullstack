@@ -17,8 +17,7 @@ class Addbet extends React.Component {
 
   handleChange (e) {
     this.setState({
-      couple: e.target.value,
-      person: e.target.value
+      couple: e.target.value
     })
   }
 
@@ -62,14 +61,56 @@ class Addbet extends React.Component {
         </div>
 
         <div style={form} className='form'>
-          <p style={{textAlign: 'left', width: '30%'}}>Couple: <input style={{float: 'right'}} name='couple' onChange={this.handleChange} /></p>
-          <p style={{textAlign: 'left', width: '30%'}}>Person: <input style={{float: 'right'}} name='person' onChange={this.handleChange} /></p>
-          <p style={{textAlign: 'left', width: '30%'}}>Bet: <input style={{float: 'right'}} name='bet' onChange={this.handleChange} /></p>
-          <p style={{textAlign: 'left', width: '30%'}}>Amount Bet: <input style={{float: 'right'}} name='amountBet' onChange={this.handleChange} /></p>
-          <p style={{textAlign: 'left', width: '30%'}}>Amount Won: <input style={{float: 'right'}} name='amountWon' onChange={this.handleChange} /></p>
+
+          <div className="row">
+            <div className="col-md-4">
+              <p>Couple: <input name='couple' onChange={this.handleChange} /></p>
+            </div>
+            <div className="col-md-6">
+              <p>{this.state.couple}</p>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-4">
+              <p>Person: <input name='person' onChange={this.handleChange} /></p>
+            </div>
+            <div className="col-md-6">
+              <p>{this.state.person}</p>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-4">
+              <p>amountBet: <input name='amountBet' onChange={this.handleChange} /></p>
+            </div>
+            <div className="col-md-6">
+              <p>{}</p>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-4">
+              <p>amountWon: <input name='amountWon' onChange={this.handleChange} /></p>
+            </div>
+            <div className="col-md-6">
+              <p>{}</p>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-4">
+              <p>percentage: <input name='percentage' onChange={this.handleChange} /></p>
+            </div>
+            <div className="col-md-6">
+              <p>{}</p>
+            </div>
+          </div>
+
           <p style={{textAlign: 'left', width: '30%'}}><button onClick={this.handleClick}>Add Bet</button></p>
         </div>
       </div>
+
     )
   }
 }
