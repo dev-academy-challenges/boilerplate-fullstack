@@ -2,7 +2,6 @@ import React from 'react'
 
 import {Link} from 'react-router-dom'
 import {getBets} from '../apiClient'
-import {Z_BEST_COMPRESSION} from 'zlib'
 
 class Bets extends React.Component {
   constructor (props) {
@@ -25,26 +24,27 @@ class Bets extends React.Component {
   }
 
   render () {
+    // IN LINE STYLING ----------------
     const header = {
       padding: '2%',
-      background: 'navy',
+      background: '#0359AE',
       color: 'white',
       width: '100%',
-      margin: 0
+      margin: '0 important!'
     }
-    // const body = {
-    //   background: 'lightGrey',
-    //   color: 'black',
-    //   width: '100%',
-    //   padding: '2%'
-    // }
     const nav = {
       padding: '2%',
-      background: 'green',
+      background: '#14B09B',
       color: 'white',
       width: '100%'
     }
+    const heading = {
+      background: '#CC8A56',
+      color: 'white',
+      padding: '2%'
+    }
 
+    // RETRIEVING DATA FROM BETS TABLE -----------
     const betPerson = this.state.bets.map(bet => {
       return <p key={bet.id}>{bet.person}</p>
     })
@@ -58,17 +58,18 @@ class Bets extends React.Component {
     })
 
     const betAmount = this.state.bets.map(bet => {
-      return <p key={bet.id}>{bet.amountBet}</p>
+      return <p key={bet.id}>${Number(bet.amountBet).toFixed(2)}</p>
     })
 
     const betWon = this.state.bets.map(bet => {
-      return <p key={bet.id}>{bet.amountWon}</p>
+      return <p key={bet.id}>${Number(bet.amountWon).toFixed(2)}</p>
     })
 
     const betPercentage = this.state.bets.map(bet => {
       return <p key={bet.id}>{(bet.amountWon / bet.amountBet) * 100}%</p>
     })
 
+    // REACT HTML RENDERING --------------
     return (
       <div className="container">
         <h1 style={header}>Bets</h1>
@@ -77,27 +78,27 @@ class Bets extends React.Component {
         </div>
         <div className="row">
           <div className="col-md-2">
-            <h4>Couple</h4>
+            <h4 style={heading}>Couple</h4>
             {betCouple}
           </div>
           <div className="col-md-2">
-            <h4>Person</h4>
+            <h4 style={heading}>Person</h4>
             {betPerson}
           </div>
           <div className="col-md-2">
-            <h4>Bet</h4>
+            <h4 style={heading}>Bet</h4>
             {betBet}
           </div>
           <div className="col-md-2">
-            <h4>Amount Bet</h4>
+            <h4 style={heading}>Amount Bet</h4>
             {betAmount}
           </div>
           <div className="col-md-2">
-            <h4>Bet Won</h4>
+            <h4 style={heading}>Bet Won</h4>
             {betWon}
           </div>
           <div className="col-md-2">
-            <h4>Percentage</h4>
+            <h4 style={heading}>Percentage</h4>
             {betPercentage}
           </div>
         </div>

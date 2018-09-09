@@ -8,3 +8,9 @@
     -ms-box-sizing: border-box; 
     box-sizing: border-box; 
     }
+
+    body {
+      background: #EBE5D9;
+      font-family: 'Quattrocento Sans', sans-serif !important
+
+    }
