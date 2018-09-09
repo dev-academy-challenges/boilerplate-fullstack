@@ -1,5 +1,5 @@
 * { 
-  outline: 1px solid #947676 !important; 
+  outline: 1px transparent #947676 !important; 
   } 
   
    * { 
@@ -10,7 +10,12 @@
     }
 
     body {
-      background: #EBE5D9;
-      font-family: 'Quattrocento Sans', sans-serif !important
+      background: #E1DCD9;
+      font-family: 'Dosis', sans-serif, !important
 
+    }
+
+    p {
+      font-size: 0.85em;
+      text-align: center
     }

@@ -2,13 +2,9 @@ const config = require('../knexfile').development
 const connection = require('knex')(config)
 
 module.exports = {
-  getBets
+  getBets,
+  addBets
 }
-
-// function getBets () {
-//   const bets = ['horses', 'football', 'greyhounds']
-//   return Promise.resolve(bets)
-// }
 
 function getBets (testDb) {
   const db = testDb || connection
@@ -21,4 +17,10 @@ function getBets (testDb) {
     .select('amount_bet as amountBet')
     .select('amount_won as amountWon')
     .select('percentage')
+}
+
+function addBets (bets, testDb) {
+  const db = testDb || connection
+  return db('bets')
+    .insert(bets)
 }

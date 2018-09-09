@@ -11,4 +11,15 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/addbet', (req, res) => {
+  const bets = req.body
+  db.addBets(bets)
+    .then(() => {
+      res.status(201).end()
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
 module.exports = router

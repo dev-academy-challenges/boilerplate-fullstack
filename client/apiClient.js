@@ -8,3 +8,17 @@ export function getBets () {
       return res.body.bets
     })
 }
+
+export function addBets (bets) {
+  return request
+    .post(rootUrl + '/addbet')
+    .send(bets)
+    .then((res) => {
+      // eslint-disable-next-line no-console
+      console.log('success')
+    })
+    .catch(err => {
+      // eslint-disable-next-line no-console
+      console.log(err.message)
+    })
+}
