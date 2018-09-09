@@ -13,5 +13,12 @@ module.exports = {
 function getBets (testDb) {
   const db = testDb || connection
   return db('bets')
-    .select()
+    .select('id')
+    .select('person')
+    .select('couple')
+    .select('sport')
+    .select('bet')
+    .select('amount_bet as amountBet')
+    .select('amount_won as amountWon')
+    .select('percentage')
 }
