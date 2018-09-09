@@ -12,6 +12,7 @@ class Addbet extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleChange (e) {
@@ -23,6 +24,7 @@ class Addbet extends React.Component {
 
   handleClick (e) {
     addBets(this.state)
+    console.log(this.state)
     // .then(this.props.updateUserList)
   }
 
@@ -61,9 +63,9 @@ class Addbet extends React.Component {
         </div>
 
         <div style={form} className='form'>
-          <p>Name: <input name='name' onChange={this.handleChange} /></p>
-          <p>Email: <input name='email' onChange={this.handleChange} /></p>
-          <p><button onClick={this.handleClick}>Add user</button></p>
+          <p>Couple: <input value="couple" name='couple' onChange={this.handleChange} /></p>
+          <p>Person: <input value="person" name='person' onChange={this.handleChange} /></p>
+          <p><button onClick={this.handleClick}>Add Bet</button></p>
         </div>
       </div>
     )

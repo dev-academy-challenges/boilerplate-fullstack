@@ -13,7 +13,7 @@ export function addBets (bets) {
   return request
     .post(rootUrl + '/addbet')
     .send(bets)
-    .then((res) => {
+    .then(() => {
       // eslint-disable-next-line no-console
       console.log('success')
     })

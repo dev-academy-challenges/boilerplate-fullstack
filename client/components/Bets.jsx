@@ -74,8 +74,19 @@ class Bets extends React.Component {
       return <p key={bet.id}>${Number(bet.amountWon).toFixed(2)}</p>
     })
 
+    // Need to refactor this?
+
     const betPercentage = this.state.bets.map(bet => {
-      return <p key={bet.id}>{(bet.amountWon / bet.amountBet) * 100}%</p>
+      const betPercent = (bet.amountWon / bet.amountBet) * 100
+      if (betPercent < 50) {
+        return <p key={bet.id} style={{backgroundColor: 'rgb(182, 116, 116)'}}>{betPercent}%</p>
+      } else if (betPercent < 100) {
+        return <p key={bet.id} style={{backgroundColor: 'yellow'}}>{betPercent}%</p>
+      } else if (betPercent < 200) {
+        return <p key={bet.id} style={{backgroundColor: 'rgb(113, 182, 113)'}}>{betPercent}%</p>
+      } else {
+        return <p key={bet.id} style={{backgroundColor: 'purple'}}>{betPercent}%</p>
+      }
     })
 
     // REACT HTML RENDERING ------------------------------------------------
