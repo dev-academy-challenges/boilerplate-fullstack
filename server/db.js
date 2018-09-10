@@ -3,7 +3,8 @@ const connection = require('knex')(config)
 
 module.exports = {
   getBets,
-  addBets
+  addBets,
+  getMembers
 }
 
 function getBets (testDb) {
@@ -18,10 +19,7 @@ function getBets (testDb) {
     .select('percentage')
 }
 
-// bets is not being passed in properly
 function addBets (newbet, testDb) {
-  // console.log('hello')
-  // console.log('goodbye' + newbet)
   const db = testDb || connection
   return db('bets')
     .insert({
@@ -33,4 +31,14 @@ function addBets (newbet, testDb) {
       amount_won: newbet.amountWon,
       percentage: newbet.percentage
     })
+}
+
+function getMembers (testDb) {
+  const db = testDb || connection
+  return db('members')
+    .select('person')
+    .select('couple')
+    .select('couple_photo as couplePhoto')
+    .select('individual_photo as individualPhoto')
+    .select('email')
 }
