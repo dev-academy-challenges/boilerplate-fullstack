@@ -1,5 +1,5 @@
 * { 
-  outline: 1px solid #947676 !important; 
+  outline: 1px transparent #947676 !important; 
   } 
   
    * { 
@@ -10,7 +10,7 @@
     }
 
     body {
-      background: #E1DCD9;
+      background: #EBE5D9 !important;
       font-family: 'Dosis', sans-serif, !important
 
     }
@@ -22,7 +22,7 @@
 
     .nav {
       padding: 2%;
-      background: #A67F78;
+      background: #14B09B;
       color: #E1DCD9;
       width: 100%;
       margin-bottom: 2%;
@@ -30,27 +30,49 @@
 
     .header {
       padding: 2%;
-      background: #32435F;
-      color: #E1DCD9;
+      background: #0359AE;
+      color: #EBE5D9;
       width: 100%;
       text-transform: uppercase;
       margin-bottom: 0
     }
 
     .heading {
-      background: #8F8681;
-      color: white;
+      background: #CC8A56;
+      color: #EBE5D9;
       padding: 2%;
       margin-left: 0;
       margin-right: 0;
       text-align: center
     }
 
+    .button {
+      margin: 2%
+    }
+
     button {
-      margin-left: 40%
+      margin: 2%;
     }
 
     .form {
-      background: #8F8681;
-      padding-top: 3%;
+      background: #14B09B;
+      text-align: left
     }
+
+    .bet-row {
+      border: solid 0px #8F8681;
+    }
+
+    a {
+      margin-left: 2%
+    }
+
+    .percent {
+      width: 50%;
+      margin-left: 25%
+    }
+
+    .p-form {
+      width: 50%
+    }
+

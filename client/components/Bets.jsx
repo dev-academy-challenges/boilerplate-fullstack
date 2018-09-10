@@ -27,10 +27,10 @@ class Bets extends React.Component {
   }
 
   percentColour (betPercentage) {
-    const red = {background: 'rgb(182, 116, 116)'}
-    const yellow = {background: 'rgb(182, 116, 116)'}
-    const green = {background: 'rgb(113, 182, 113)'}
-    const purple = {background: 'purple'}
+    const red = {background: 'rgb(182, 116, 116)', color: 'white'}
+    const yellow = {background: 'rgb(182, 116, 116)', color: 'white'}
+    const green = {background: 'rgb(113, 182, 113)', color: 'white'}
+    const purple = {background: 'purple', color: 'white'}
 
     if (betPercentage < 50) {
       return red
@@ -55,7 +55,7 @@ class Bets extends React.Component {
   }
 
   betPercentage (betPercent) {
-    const convertToNumber = Number(betPercent).toFixed(2)
+    const convertToNumber = Number(betPercent).toFixed(0)
     if (isNaN(convertToNumber)) {
       return Number(0.00).toFixed(2)
     } else {
@@ -69,15 +69,15 @@ class Bets extends React.Component {
       const betPercent = (bet.amountWon / bet.amountBet) * 100
 
       return <div key={bet.id}>
+        <div className="bet-row">
+        </div>
         <div className="row">
           <div className="col-md-2"><p>{bet.couple}</p></div>
           <div className="col-md-2"><p>{bet.person}</p></div>
           <div className="col-md-2"><p>{bet.bet}</p></div>
           <div className="col-md-2"><p>${Number(bet.amountBet).toFixed(2)}</p></div>
-
           <div className="col-md-2"><p>{this.didBetWin(bet.amountWon)}</p></div>
-
-          <div className="col-md-2"><p style={this.percentColour(betPercent)}>
+          <div className="col-md-2"><p className="percent" style={this.percentColour(betPercent)}>
             {this.betPercentage(betPercent)}%</p>
           </div>
 
@@ -89,10 +89,18 @@ class Bets extends React.Component {
       <div className="container">
         <h1 className='header'>Bets</h1>
         <div className='nav'>
-          <Link to="/"><button>Home</button></Link>
+          <Link to="/"><button className="button">Home</button></Link>
         </div>
         <div className="button">
           <Link to="/addbet"><button>Add Bet</button></Link>
+        </div>
+        <div className="row">
+          <div className="col-md-2"><h5 className="heading">Couple</h5></div>
+          <div className="col-md-2"><h5 className="heading">Person</h5></div>
+          <div className="col-md-2"><h5 className="heading">Bet</h5></div>
+          <div className="col-md-2"><h5 className="heading">Amount Bet</h5></div>
+          <div className="col-md-2"><h5 className="heading">Amount Won</h5></div>
+          <div className="col-md-2"><h5 className="heading">Percentage</h5></div>
         </div>
         <p>{bet}</p>
       </div>

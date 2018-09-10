@@ -44,64 +44,16 @@ class Addbet extends React.Component {
 
         <div className='form'>
 
-          <div className="row">
-            <div className="col-md-4">
-              <p>Couple: <input name='couple' value={this.state.couple} onChange={this.handleChange} /></p>
-            </div>
-            <div className="col-md-6">
-            </div>
-          </div>
+          <p className="p-form">Couple: <input name='couple' value={this.state.couple} onChange={this.handleChange} /></p>
+          <p className="p-form">Person: <input name='person' value={this.state.person} onChange={this.handleChange} /></p>
+          <p className="p-form">Bet: <input name='bet' value={this.state.bet} onChange={this.handleChange} /></p>
+          <p className="p-form">amountBet: <input name='amountBet' value={this.state.amountBet} onChange={this.handleChange} /></p>
+          <p className="p-form">amountWon: <input name='amountWon' value={this.state.amountWon} onChange={this.handleChange} /></p>
+          <p className="p-form">Sport: <input name='sport' value={this.state.sport} onChange={this.handleChange} /></p>
+          <p className="p-form">percentage: <input name='percentage' value={this.state.percentage} onChange={this.handleChange} /></p>
 
-          <div className="row">
-            <div className="col-md-4">
-              <p>Person: <input name='person' value={this.state.person} onChange={this.handleChange} /></p>
-            </div>
-            <div className="col-md-6">
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-4">
-              <p>Bet: <input name='bet' value={this.state.bet} onChange={this.handleChange} /></p>
-            </div>
-            <div className="col-md-6">
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-4">
-              <p>amountBet: <input name='amountBet' value={this.state.amountBet} onChange={this.handleChange} /></p>
-            </div>
-            <div className="col-md-6">
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-4">
-              <p>amountWon: <input name='amountWon' value={this.state.amountWon} onChange={this.handleChange} /></p>
-            </div>
-            <div className="col-md-6">
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-4">
-              <p>Sport: <input name='sport' value={this.state.sport} onChange={this.handleChange} /></p>
-            </div>
-            <div className="col-md-6">
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-4">
-              <p>percentage: <input name='percentage' value={this.state.percentage} onChange={this.handleChange} /></p>
-            </div>
-            <div className="col-md-6">
-            </div>
-          </div>
-
-          <p style={{textAlign: 'left', width: '30%'}}>
-            <button onClick={this.handleClick}>Add Bet</button>
+          <p>
+            <button className="button" onClick={this.handleClick}>Add Bet</button>
           </p>
         </div>
       </div>
