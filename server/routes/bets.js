@@ -12,10 +12,11 @@ router.get('/', (req, res) => {
 })
 
 router.post('/addbet', (req, res) => {
-  const bets = req.body
-  db.addBets(bets)
+  const newbets = req.body
+  console.log('----', req.body)
+  db.addBets(newbets)
     .then(() => {
-      res.status(201).end()
+      res.sendStatus(200)
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)

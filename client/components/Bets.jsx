@@ -74,7 +74,7 @@ class Bets extends React.Component {
       return <p key={bet.id}>${Number(bet.amountWon).toFixed(2)}</p>
     })
 
-    // Need to refactor this?
+    // Need to refactor this? Do a switch statement
 
     const betPercentage = this.state.bets.map(bet => {
       const betPercent = (bet.amountWon / bet.amountBet) * 100

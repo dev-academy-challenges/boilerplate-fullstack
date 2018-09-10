@@ -7,8 +7,13 @@ class Addbet extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      person: '',
       couple: '',
-      person: ''
+      sport: '',
+      bet: '',
+      amountBet: '',
+      amountWon: '',
+      percentage: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -17,13 +22,16 @@ class Addbet extends React.Component {
 
   handleChange (e) {
     this.setState({
-      couple: e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
   handleClick (e) {
-    addBets(this.state)
-    console.log(this.state)
+    e.preventDefault()
+    const bets = this.state
+    console.log(bets)
+    console.log(typeof bets)
+    addBets(bets)
     // .then(this.props.updateUserList)
   }
 
@@ -64,50 +72,63 @@ class Addbet extends React.Component {
 
           <div className="row">
             <div className="col-md-4">
-              <p>Couple: <input name='couple' onChange={this.handleChange} /></p>
+              <p>Couple: <input name='couple' value={this.state.couple} onChange={this.handleChange} /></p>
             </div>
             <div className="col-md-6">
-              <p>{this.state.couple}</p>
             </div>
           </div>
 
           <div className="row">
             <div className="col-md-4">
-              <p>Person: <input name='person' onChange={this.handleChange} /></p>
+              <p>Person: <input name='person' value={this.state.person} onChange={this.handleChange} /></p>
             </div>
             <div className="col-md-6">
-              <p>{this.state.person}</p>
             </div>
           </div>
 
           <div className="row">
             <div className="col-md-4">
-              <p>amountBet: <input name='amountBet' onChange={this.handleChange} /></p>
+              <p>Bet: <input name='bet' value={this.state.bet} onChange={this.handleChange} /></p>
             </div>
             <div className="col-md-6">
-              <p>{}</p>
             </div>
           </div>
 
           <div className="row">
             <div className="col-md-4">
-              <p>amountWon: <input name='amountWon' onChange={this.handleChange} /></p>
+              <p>amountBet: <input name='amountBet' value={this.state.amountBet} onChange={this.handleChange} /></p>
             </div>
             <div className="col-md-6">
-              <p>{}</p>
             </div>
           </div>
 
           <div className="row">
             <div className="col-md-4">
-              <p>percentage: <input name='percentage' onChange={this.handleChange} /></p>
+              <p>amountWon: <input name='amountWon' value={this.state.amountWon} onChange={this.handleChange} /></p>
             </div>
             <div className="col-md-6">
-              <p>{}</p>
             </div>
           </div>
 
-          <p style={{textAlign: 'left', width: '30%'}}><button onClick={this.handleClick}>Add Bet</button></p>
+          <div className="row">
+            <div className="col-md-4">
+              <p>Sport: <input name='sport' value={this.state.sport} onChange={this.handleChange} /></p>
+            </div>
+            <div className="col-md-6">
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-4">
+              <p>percentage: <input name='percentage' value={this.state.percentage} onChange={this.handleChange} /></p>
+            </div>
+            <div className="col-md-6">
+            </div>
+          </div>
+
+          <p style={{textAlign: 'left', width: '30%'}}>
+            <button onClick={this.handleClick}>Add Bet</button>
+          </p>
         </div>
       </div>
 
