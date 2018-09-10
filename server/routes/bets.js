@@ -4,13 +4,6 @@ const db = require('../db')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  db.getBets()
-    .then(bets => {
-      res.json({bets})
-    })
-})
-
 router.post('/addbet', (req, res) => {
   const newbets = req.body
   db.addBets(newbets)
@@ -23,9 +16,16 @@ router.post('/addbet', (req, res) => {
 })
 
 router.get('/members', (req, res) => {
-  db.getBets()
+  db.getMembers()
     .then(members => {
       res.json({members})
+    })
+})
+
+router.get('/', (req, res) => {
+  db.getBets()
+    .then(bets => {
+      res.json({bets})
     })
 })
 

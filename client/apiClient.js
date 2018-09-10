@@ -25,7 +25,7 @@ export function addBets (bets) {
 }
 
 export function getMembers () {
-  return request.get(rootUrl + '/members')
+  return request.get(rootUrl + '/bets/members')
     .then(res => {
       return res.body.members
     })

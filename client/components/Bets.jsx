@@ -27,10 +27,10 @@ class Bets extends React.Component {
   }
 
   percentColour (betPercentage) {
-    const red = {background: 'rgb(182, 116, 116)', color: 'white'}
-    const yellow = {background: 'rgb(182, 116, 116)', color: 'white'}
-    const green = {background: 'rgb(113, 182, 113)', color: 'white'}
-    const purple = {background: 'purple', color: 'white'}
+    const red = {background: '#EE3239', color: 'white'}
+    const yellow = {background: '#FEC748', color: 'white'}
+    const green = {background: '#499360', color: 'white'}
+    const purple = {background: '#632A7E', color: 'white'}
 
     if (betPercentage < 50) {
       return red

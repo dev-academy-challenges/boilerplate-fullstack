@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {Link} from 'react-router-dom'
-import {getBets} from '../apiClient'
+import {getMembers} from '../apiClient'
 
 class Members extends React.Component {
   constructor (props) {
@@ -16,7 +16,7 @@ class Members extends React.Component {
     this.fetchMembers()
   }
 
-  fetchBets () {
+  fetchMembers () {
     return getMembers()
       .then(members => {
         this.setState({members: members})
@@ -24,15 +24,8 @@ class Members extends React.Component {
   }
 
   render () {
-    // RETRIEVING DATA FROM BETS TABLE ------------------------------------
     const member = this.state.members.map(member => {
-      return <div key={member.id}>
-        <div className="bet-row">
-        </div>
-        <div className="row">
-          <div className="col-md-2"><p>{member.name}</p></div>
-        </div>
-      </div>
+      return member.couple
     })
 
     return (
@@ -43,9 +36,9 @@ class Members extends React.Component {
           <Link to="/bets"><button className="button">Bets</button></Link>
         </div>
         <div className="row">
-          <div className="col-md-2"><h5 className="heading">Couple</h5></div>
-        </div>
-        <p>{member}</p>
+          <div className="col-md-6">
+
+          </div>{member}</div>
       </div>
     )
   }

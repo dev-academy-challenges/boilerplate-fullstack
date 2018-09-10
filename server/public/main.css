@@ -1,5 +1,5 @@
 * { 
-  outline: 1px transparent #947676 !important; 
+  outline: 1px solid #947676 !important; 
   } 
   
    * { 
@@ -10,8 +10,8 @@
     }
 
     body {
-      background: #EBE5D9 !important;
-      font-family: 'Dosis', sans-serif, !important
+      background: #BEDAE5 !important;
+      font-family: 'Dosis', sans-serif, !important;
 
     }
 
@@ -22,28 +22,29 @@
 
     .nav {
       padding: 2%;
-      background: #14B09B;
-      color: #E1DCD9;
+      background: #EECB27;
+      color: white;
       width: 100%;
       margin-bottom: 2%;
     }
 
     .header {
       padding: 2%;
-      background: #0359AE;
-      color: #EBE5D9;
+      background: #1F1762;
+      color: white;
       width: 100%;
       text-transform: uppercase;
       margin-bottom: 0
     }
 
     .heading {
-      background: #CC8A56;
-      color: #EBE5D9;
-      padding: 2%;
+      background: #1F1762;
+      color: white;
+      padding: 3%;
       margin-left: 0;
       margin-right: 0;
-      text-align: center
+      text-align: center;
+      margin-top: 4%
     }
 
     .button {
@@ -55,12 +56,14 @@
     }
 
     .form {
-      background: #14B09B;
-      text-align: left
+      background: #EECB27;
+      text-align: left;
+      color: white;
+      padding-top: 3%
     }
 
     .bet-row {
-      border: solid 0px #8F8681;
+      border: solid 0px white;
     }
 
     a {
