@@ -10,6 +10,9 @@ class Bets extends React.Component {
       bets: []
     }
     this.fetchBets = this.fetchBets.bind(this)
+    this.percentColour = this.percentColour.bind(this)
+    this.didBetWin = this.didBetWin.bind(this)
+    this.betPercentage = this.betPercentage.bind(this)
   }
 
   componentDidMount () {
@@ -23,48 +26,64 @@ class Bets extends React.Component {
       })
   }
 
+  percentColour (betPercentage) {
+    const red = {background: 'rgb(182, 116, 116)'}
+    const yellow = {background: 'rgb(182, 116, 116)'}
+    const green = {background: 'rgb(113, 182, 113)'}
+    const purple = {background: 'purple'}
+
+    if (betPercentage < 50) {
+      return red
+    } else if (betPercentage < 100) {
+      return yellow
+    } else if (betPercentage < 200) {
+      return green
+    } else if (betPercentage > 200) {
+      return purple
+    } else {
+      return red
+    }
+  }
+
+  didBetWin (betAmount) {
+    const convertToNumber = Number(betAmount).toFixed(2)
+    if (isNaN(convertToNumber)) {
+      return <div>Not a winner</div>
+    } else {
+      return <div>${convertToNumber}</div>
+    }
+  }
+
+  betPercentage (betPercent) {
+    const convertToNumber = Number(betPercent).toFixed(2)
+    if (isNaN(convertToNumber)) {
+      return Number(0.00).toFixed(2)
+    } else {
+      return convertToNumber
+    }
+  }
+
   render () {
     // RETRIEVING DATA FROM BETS TABLE ------------------------------------
-    const betPerson = this.state.bets.map(bet => {
-      return <p key={bet.id}>{bet.person}</p>
-    })
-
-    const betCouple = this.state.bets.map(bet => {
-      return <p key={bet.id}>{bet.couple}</p>
-    })
-
-    const betBet = this.state.bets.map(bet => {
-      return <p key={bet.id}>{bet.bet}</p>
-    })
-
-    const betAmount = this.state.bets.map(bet => {
-      return <p key={bet.id}>${Number(bet.amountBet).toFixed(2)}</p>
-    })
-
-    const betWon = this.state.bets.map(bet => {
-      return <p key={bet.id}>${Number(bet.amountWon).toFixed(2)}</p>
-    })
-
-    // Need to refactor this? Do a switch statement
-
-    const betPercentage = this.state.bets.map(bet => {
+    const bet = this.state.bets.map(bet => {
       const betPercent = (bet.amountWon / bet.amountBet) * 100
-      if (betPercent < 50) {
-        return <p key={bet.id} style={{backgroundColor: 'rgb(182, 116, 116)'}}>{betPercent}%</p>
-      } else if (betPercent < 100) {
-        return <p key={bet.id} style={{backgroundColor: 'yellow'}}>{betPercent}%</p>
-      } else if (betPercent < 200) {
-        return <p key={bet.id} style={{backgroundColor: 'rgb(113, 182, 113)'}}>{betPercent}%</p>
-      } else {
-        return <p key={bet.id} style={{backgroundColor: 'purple'}}>{betPercent}%</p>
-      }
+
+      return <div key={bet.id}>
+        <div className="row">
+          <div className="col-md-2"><p>{bet.couple}</p></div>
+          <div className="col-md-2"><p>{bet.person}</p></div>
+          <div className="col-md-2"><p>{bet.bet}</p></div>
+          <div className="col-md-2"><p>${Number(bet.amountBet).toFixed(2)}</p></div>
+
+          <div className="col-md-2"><p>{this.didBetWin(bet.amountWon)}</p></div>
+
+          <div className="col-md-2"><p style={this.percentColour(betPercent)}>
+            {this.betPercentage(betPercent)}%</p>
+          </div>
+
+        </div>
+      </div>
     })
-
-    // REACT HTML RENDERING ------------------------------------------------
-
-    // Now I need a button saying add new bet.
-    // This will take me to a new component - add bet
-    // this will have a form page
 
     return (
       <div className="container">
@@ -72,37 +91,10 @@ class Bets extends React.Component {
         <div className='nav'>
           <Link to="/"><button>Home</button></Link>
         </div>
-
         <div className="button">
           <Link to="/addbet"><button>Add Bet</button></Link>
         </div>
-
-        <div className="row">
-          <div className="col-md-2">
-            <h4 className="heading">Couple</h4>
-            {betCouple}
-          </div>
-          <div className="col-md-2">
-            <h4 className="heading">Person</h4>
-            {betPerson}
-          </div>
-          <div className="col-md-2">
-            <h4 className="heading">Bet</h4>
-            {betBet}
-          </div>
-          <div className="col-md-2">
-            <h4 className="heading">Amount Bet</h4>
-            {betAmount}
-          </div>
-          <div className="col-md-2">
-            <h4 className="heading">Bet Won</h4>
-            {betWon}
-          </div>
-          <div className="col-md-2">
-            <h4 className="heading">Percentage</h4>
-            {betPercentage}
-          </div>
-        </div>
+        <p>{bet}</p>
       </div>
     )
   }
