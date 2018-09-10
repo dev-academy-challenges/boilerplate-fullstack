@@ -11,6 +11,7 @@ export default function Home (props) {
       </div>
       <div className="nav">
         <Link to="/bets"><button>Bets</button></Link>
+        <Link to="/members"><button>Members</button></Link>
       </div>
     </div>
   )
