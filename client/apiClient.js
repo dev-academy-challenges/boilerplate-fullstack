@@ -23,3 +23,10 @@ export function addBets (bets) {
       console.log(err.message)
     })
 }
+
+export function getMembers () {
+  return request.get(rootUrl + '/members')
+    .then(res => {
+      return res.body.members
+    })
+}
