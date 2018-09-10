@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
 
 router.post('/addbet', (req, res) => {
   const newbets = req.body
-  console.log('----', req.body)
   db.addBets(newbets)
     .then(() => {
       res.sendStatus(200)

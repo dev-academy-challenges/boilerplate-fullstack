@@ -24,35 +24,6 @@ class Bets extends React.Component {
   }
 
   render () {
-    // IN LINE STYLING ----------------------------------------------------
-    const header = {
-      padding: '2%',
-      background: '#32435F',
-      color: '#E1DCD9',
-      width: '100%',
-      textTransform: 'uppercase',
-      marginBottom: 0
-    }
-    const nav = {
-      padding: '2%',
-      background: '#A67F78',
-      color: '#E1DCD9',
-      width: '100%',
-      marginBottom: '2%'
-    }
-    const heading = {
-      background: '#8F8681',
-      color: 'white',
-      padding: '2%',
-      textAlign: 'center',
-      marginLeft: 0,
-      marginRight: 0
-    }
-    const button = {
-      paddingLeft: '2%',
-      paddingBottom: '2%'
-    }
-
     // RETRIEVING DATA FROM BETS TABLE ------------------------------------
     const betPerson = this.state.bets.map(bet => {
       return <p key={bet.id}>{bet.person}</p>
@@ -97,38 +68,38 @@ class Bets extends React.Component {
 
     return (
       <div className="container">
-        <h1 style={header}>Bets</h1>
-        <div style={nav}>
+        <h1 className='header'>Bets</h1>
+        <div className='nav'>
           <Link to="/"><button>Home</button></Link>
         </div>
 
-        <div style={button}>
+        <div className="button">
           <Link to="/addbet"><button>Add Bet</button></Link>
         </div>
 
         <div className="row">
           <div className="col-md-2">
-            <h4 style={heading}>Couple</h4>
+            <h4 className="heading">Couple</h4>
             {betCouple}
           </div>
           <div className="col-md-2">
-            <h4 style={heading}>Person</h4>
+            <h4 className="heading">Person</h4>
             {betPerson}
           </div>
           <div className="col-md-2">
-            <h4 style={heading}>Bet</h4>
+            <h4 className="heading">Bet</h4>
             {betBet}
           </div>
           <div className="col-md-2">
-            <h4 style={heading}>Amount Bet</h4>
+            <h4 className="heading">Amount Bet</h4>
             {betAmount}
           </div>
           <div className="col-md-2">
-            <h4 style={heading}>Bet Won</h4>
+            <h4 className="heading">Bet Won</h4>
             {betWon}
           </div>
           <div className="col-md-2">
-            <h4 style={heading}>Percentage</h4>
+            <h4 className="heading">Percentage</h4>
             {betPercentage}
           </div>
         </div>

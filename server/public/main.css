@@ -1,5 +1,5 @@
 * { 
-  outline: 1px transparent #947676 !important; 
+  outline: 1px solid #947676 !important; 
   } 
   
    * { 
@@ -18,4 +18,39 @@
     p {
       font-size: 0.85em;
       text-align: center;
+    }
+
+    .nav {
+      padding: 2%;
+      background: #A67F78;
+      color: #E1DCD9;
+      width: 100%;
+      margin-bottom: 2%;
+    }
+
+    .header {
+      padding: 2%;
+      background: #32435F;
+      color: #E1DCD9;
+      width: 100%;
+      text-transform: uppercase;
+      margin-bottom: 0
+    }
+
+    .heading {
+      background: #8F8681;
+      color: white;
+      padding: 2%;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center
+    }
+
+    button {
+      margin-left: 40%
+    }
+
+    .form {
+      background: #8F8681;
+      padding-top: 3%;
     }

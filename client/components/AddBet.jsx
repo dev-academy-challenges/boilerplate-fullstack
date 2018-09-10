@@ -28,47 +28,21 @@ class Addbet extends React.Component {
 
   handleClick (e) {
     e.preventDefault()
-    const bets = this.state
-    console.log(bets)
-    console.log(typeof bets)
-    addBets(bets)
+    addBets(this.state)
     // .then(this.props.updateUserList)
   }
 
   render () {
-    // IN LINE STYLING ----------------------------------------------------
-    const header = {
-      padding: '2%',
-      background: '#32435F',
-      color: '#E1DCD9',
-      width: '100%',
-      textTransform: 'uppercase',
-      marginBottom: 0
-    }
-    const nav = {
-      padding: '2%',
-      background: '#A67F78',
-      color: '#E1DCD9',
-      width: '100%',
-      marginBottom: '2%'
-    }
-    const form = {
-      background: '#8F8681',
-      color: 'white',
-      padding: '2%',
-      marginLeft: 0,
-      marginRight: 0
-    }
     return (
 
       <div className="container">
-        <h1 style={header}>Add a new bet</h1>
-        <div style={nav}>
+        <h1 className="header">Add a new bet</h1>
+        <div className="nav">
           <Link to="/"><button>Home</button></Link>
           <Link to="/bets"><button>Bets</button></Link>
         </div>
 
-        <div style={form} className='form'>
+        <div className='form'>
 
           <div className="row">
             <div className="col-md-4">

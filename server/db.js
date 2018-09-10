@@ -20,8 +20,8 @@ function getBets (testDb) {
 
 // bets is not being passed in properly
 function addBets (newbet, testDb) {
-  console.log('hello')
-  console.log('goodbye' + newbet)
+  // console.log('hello')
+  // console.log('goodbye' + newbet)
   const db = testDb || connection
   return db('bets')
     .insert({
