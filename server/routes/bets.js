@@ -22,4 +22,11 @@ router.post('/addbet', (req, res) => {
     })
 })
 
+router.get('/members', (req, res) => {
+  db.getBets()
+    .then(members => {
+      res.json({members})
+    })
+})
+
 module.exports = router
