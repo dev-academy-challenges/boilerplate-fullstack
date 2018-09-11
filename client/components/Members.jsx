@@ -29,7 +29,7 @@ class Members extends React.Component {
     })
 
     return (
-      <div className="container">
+      <div className="container-fluid">
         <h1 className='header'>Members</h1>
         <div className='nav'>
           <Link to="/"><button className="button">Home</button></Link>

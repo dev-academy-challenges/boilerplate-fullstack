@@ -47,6 +47,16 @@
       margin-top: 4%
     }
 
+    .small-heading {
+      background: #1F1762;
+      color: white;
+      padding: 3%;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+      margin-top: 4%
+    }
+
     .button {
       margin: 2%
     }

@@ -86,13 +86,14 @@ class Bets extends React.Component {
     })
 
     return (
-      <div className="container">
+      <div className="container-fluid">
         <h1 className='header'>Bets</h1>
         <div className='nav'>
           <Link to="/"><button className="button">Home</button></Link>
         </div>
         <div className="button">
           <Link to="/addbet"><button>Add Bet</button></Link>
+          <Link to="/datacheck"><button>Data Check</button></Link>
         </div>
         <div className="row">
           <div className="col-md-2"><h5 className="heading">Couple</h5></div>
