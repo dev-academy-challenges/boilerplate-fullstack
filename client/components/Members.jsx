@@ -10,10 +10,17 @@ class Members extends React.Component {
       members: []
     }
     this.fetchMembers = this.fetchMembers.bind(this)
+    this.removeDuplicates = this.removeDuplicates.bind(this)
   }
 
   componentDidMount () {
     this.fetchMembers()
+  }
+
+  removeDuplicates (array) {
+    [...new Set(array)].map((item) => {
+      return item
+    })
   }
 
   fetchMembers () {
@@ -24,8 +31,14 @@ class Members extends React.Component {
   }
 
   render () {
-    const member = this.state.members.map(member => {
+    const couplesAll = this.state.members.map(member => {
       return member.couple
+    })
+
+    const couples = [...new Set(couplesAll)].map((couple, i) => {
+      return <div className="col-md-4" key={i}>
+        <h5 className="heading">{couple}</h5>
+      </div>
     })
 
     return (
@@ -36,9 +49,8 @@ class Members extends React.Component {
           <Link to="/bets"><button className="button">Bets</button></Link>
         </div>
         <div className="row">
-          <div className="col-md-6">
-
-          </div>{member}</div>
+          {couples}
+        </div>
       </div>
     )
   }
