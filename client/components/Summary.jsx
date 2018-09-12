@@ -22,21 +22,38 @@ class Summary extends React.Component {
       })
   }
 
+  percentColour (betPercentage) {
+    const red = {background: '#EE3239', color: 'white'}
+    const yellow = {background: '#FEC748', color: 'white'}
+    const green = {background: '#499360', color: 'white'}
+    const purple = {background: '#632A7E', color: 'white'}
+
+    if (betPercentage < 50) {
+      return red
+    } else if (betPercentage < 100) {
+      return yellow
+    } else if (betPercentage < 200) {
+      return green
+    } else if (betPercentage > 200) {
+      return purple
+    } else {
+      return red
+    }
+  }
+
   render () {
     // This removes the duplicates from the list to give
     // // just the couples
     // const couples = [...new Set(couplesAll)].map(couple => {
     //   return couple.couple
     // })
-
     const arr = this.state.bets.map(summary => {
-      const a = Number(summary.amountBet).toFixed(2)
-      const b = Number(summary.amountWon).toFixed(2)
-      const c = isNaN(b) ? Number(0).toFixed(2) : b
+      const betAmountRound = Number(summary.amountBet).toFixed(2)
+      const betAmountWon = Number(summary.amountWon).toFixed(2)
       return {
         couple: summary.couple,
-        amountBet: a,
-        amountWon: c
+        amountBet: betAmountRound,
+        amountWon: isNaN(betAmountWon) ? Number(0).toFixed(2) : betAmountWon
       }
     })
 
@@ -50,7 +67,6 @@ class Summary extends React.Component {
       }
     })
     const bielbyHartBets = bielbyHart.reduce((a, b) => a + b, 0)
-    console.log(bielbyHartBets)
 
     // To sum up amount won by Bielby/Hart
 
@@ -62,8 +78,7 @@ class Summary extends React.Component {
       }
     })
     const bielbyHartWins = x.reduce((a, b) => a + b, 0)
-    console.log(bielbyHartWins)
-
+    const bielbyHartWinsPercent = Number((bielbyHartWins / bielbyHartBets) * 100).toFixed(2)
     // To sum up amount bet by Scaglia's
 
     const scaglias = arr.map(ss => {
@@ -74,7 +89,6 @@ class Summary extends React.Component {
       }
     })
     const scagliasBets = scaglias.reduce((a, b) => a + b, 0)
-    console.log(scagliasBets)
 
     // To sum up amount won by Scaglia's
 
@@ -86,8 +100,7 @@ class Summary extends React.Component {
       }
     })
     const scagliasBetsWon = scagliasWon.reduce((a, b) => a + b, 0)
-    console.log(scagliasBets)
-
+    const scagliasBetsWonPercent = Number((scagliasBetsWon / scagliasBets) * 100).toFixed(2)
     // To sum up amount bet by Burnginham's
 
     const bsBet = arr.map(bs => {
@@ -109,6 +122,7 @@ class Summary extends React.Component {
       }
     })
     const bsWons = bsWon.reduce((a, b) => a + b, 0)
+    const bsWonsPercent = Number(bsWons).toFixed(2)
 
     return (
       <div className="container-fluid">
@@ -124,31 +138,31 @@ class Summary extends React.Component {
             <div className="row">
 
               <div className="col-md-3">
-                <h5>Couples</h5>
+                <h5 className="heading">Couples</h5>
                 <h6>Bielby/Hart</h6>
                 <h6>Scaglia's</h6>
                 <h6>Burningham/Sim</h6>
               </div>
 
               <div className="col-md-3">
-                <h5>Amount Bet</h5>
+                <h5 className="heading">Amount Bet</h5>
                 <h6>${Number(bielbyHartBets).toFixed(2)}</h6>
                 <h6>${Number(scagliasBets).toFixed(2)}</h6>
                 <h6>${Number(bsBets).toFixed(2)}</h6>
               </div>
 
               <div className="col-md-3">
-                <h5>Amount Won</h5>
+                <h5 className="heading">Amount Won</h5>
                 <h6>${Number(bielbyHartWins).toFixed(2)}</h6>
                 <h6>${Number(scagliasBetsWon).toFixed(2)}</h6>
                 <h6>${Number(bsWons).toFixed(2)}</h6>
               </div>
 
               <div className="col-md-3">
-                <h5>Percentage</h5>
-                <h6>{Number((bielbyHartWins / bielbyHartBets) * 100).toFixed(2)}%</h6>
-                <h6>{Number((scagliasBetsWon / scagliasBets) * 100).toFixed(2)}%</h6>
-                <h6>{Number((bsWons / bsBets) * 100).toFixed(2)}%</h6>
+                <h5 className="heading">Percentage</h5>
+                <h6 style={this.percentColour(bielbyHartWinsPercent)}>{bielbyHartWinsPercent}%</h6>
+                <h6 style={this.percentColour(scagliasBetsWonPercent)}>{scagliasBetsWonPercent}%</h6>
+                <h6 style={this.percentColour(bsWonsPercent)}>{bsWonsPercent}%</h6>
               </div>
 
             </div></div>
