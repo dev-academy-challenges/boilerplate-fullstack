@@ -18,9 +18,7 @@ class Members extends React.Component {
   }
 
   removeDuplicates (array) {
-    [...new Set(array)].map((item) => {
-      return item
-    })
+    return [...new Set(array)]
   }
 
   fetchMembers () {
@@ -31,15 +29,14 @@ class Members extends React.Component {
   }
 
   render () {
-    const couplesAll = this.state.members.map(member => {
-      return member.couple
-    })
-
-    const couples = [...new Set(couplesAll)].map((couple, i) => {
-      return <div className="col-md-4" key={i}>
-        <h5 className="heading">{couple}</h5>
-      </div>
-    })
+    // const couples = this.state.members.map((member, i) => {
+    const bh = 'Bielby/Hart'
+    const ss = `Scaglia's`
+    const bs = 'Burnginham/Sim'
+    //   return <div key={i} className="col-md-4">
+    //     <h5 className="heading">{bh}</h5>
+    //   </div>
+    // })
 
     return (
       <div className="container-fluid">
@@ -49,7 +46,21 @@ class Members extends React.Component {
           <Link to="/bets"><button className="button">Bets</button></Link>
         </div>
         <div className="row">
-          {couples}
+          <div className="col-md-4">
+            <h5 className="heading">{bh}</h5>
+            <p>{this.state.members.map(item => {
+              if (item.couple === bh) {
+                return <ul><li>{item.person}</li></ul>
+              }
+            })}</p>
+          </div>
+          <div className="col-md-4">
+            <h5 className="heading">{ss}</h5>
+          </div>
+          <div className="col-md-4">
+            <h5 className="heading">{bs}</h5>
+          </div>
+
         </div>
       </div>
     )
