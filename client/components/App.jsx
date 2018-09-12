@@ -7,6 +7,7 @@ import Addbet from './AddBet'
 import Members from './Members'
 import Datacheck from './DataCheck'
 import Summary from './Summary'
+import Leaderboard from './Leaderboard'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/addbet' component={Addbet}/>
           <Route path='/members' component={Members}/>
           <Route path='/datacheck' component={Datacheck}/>
+          <Route exact path='/' component={Leaderboard}/>
         </div>
       </div>
     </Router>

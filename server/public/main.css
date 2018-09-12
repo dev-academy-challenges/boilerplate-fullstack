@@ -38,7 +38,7 @@
       border-bottom: solid 1px #607178;
     }
 
-    .heading {
+    .small-heading {
       background: #607178;
       color: white;
       padding: 3%;
@@ -48,7 +48,7 @@
       margin-top: 6%
     }
 
-    .small-heading {
+    .heading {
       background: #01273C;
       color: white;
       padding: 3%;

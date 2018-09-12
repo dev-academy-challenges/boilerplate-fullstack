@@ -133,33 +133,33 @@ class Summary extends React.Component {
           </div>
 
           <div className="col-md-8">
-            <h4 className="small-heading">Summary</h4>
+            <h4 className="heading">Summary</h4>
 
             <div className="row">
 
               <div className="col-md-3">
-                <h5 className="heading">Couples</h5>
+                <h5 className="small-heading">Couples</h5>
                 <h6>Bielby/Hart</h6>
                 <h6>Scaglia's</h6>
                 <h6>Burningham/Sim</h6>
               </div>
 
               <div className="col-md-3">
-                <h5 className="heading">Amount Bet</h5>
+                <h5 className="small-heading">Amount Bet</h5>
                 <h6>${Number(bielbyHartBets).toFixed(2)}</h6>
                 <h6>${Number(scagliasBets).toFixed(2)}</h6>
                 <h6>${Number(bsBets).toFixed(2)}</h6>
               </div>
 
               <div className="col-md-3">
-                <h5 className="heading">Amount Won</h5>
+                <h5 className="small-heading">Amount Won</h5>
                 <h6>${Number(bielbyHartWins).toFixed(2)}</h6>
                 <h6>${Number(scagliasBetsWon).toFixed(2)}</h6>
                 <h6>${Number(bsWons).toFixed(2)}</h6>
               </div>
 
               <div className="col-md-3">
-                <h5 className="heading">Percentage</h5>
+                <h5 className="small-heading">Percentage</h5>
                 <h6 style={this.percentColour(bielbyHartWinsPercent)}>{bielbyHartWinsPercent}%</h6>
                 <h6 style={this.percentColour(scagliasBetsWonPercent)}>{scagliasBetsWonPercent}%</h6>
                 <h6 style={this.percentColour(bsWonsPercent)}>{bsWonsPercent}%</h6>
