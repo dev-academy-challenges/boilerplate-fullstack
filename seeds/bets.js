@@ -4,6 +4,9 @@ exports.seed = (knex, Promise) => {
     .then(function () {
       // Inserts seed entries
       return knex('bets').insert([
+        {id: 4401, person: 'Hannah', couple: 'Scaglia/Scaglia', sport: '', bet: 'NZ Warriors v Brisbane 2454 Head to Head-Live Now', amount_bet: '5', amount_won: '0', percentage: ''},
+        {id: 4402, person: 'Hannah', couple: 'Scaglia/Scaglia', sport: '', bet: 'M10 R7 RANDWICK RACES 2000m 107 Final Fld Win Deductions Apply', amount_bet: '5', amount_won: '6', percentage: ''},
+        {id: 4403, person: 'Hannah', couple: 'Scaglia/Scaglia', sport: '', bet: 'SF-Australia v New Zealand 6678 Head to Head-Live Now', amount_bet: '5', amount_won: '5.1', percentage: ''},
         {id: 4404, person: 'Steven', couple: 'Scaglia/Scaglia', sport: '', bet: 'M10 R9 RANDWICK RACES 1600m 109 Final Fld Win Deductions Apply', amount_bet: '5', amount_won: '0', percentage: ''},
         {id: 4405, person: 'Steven', couple: 'Scaglia/Scaglia', sport: '', bet: 'M10 SYDN Race 6', amount_bet: '1', amount_won: '1.8', percentage: ''},
         {id: 4406, person: 'Steven', couple: 'Scaglia/Scaglia', sport: '', bet: 'M10 R6 RANDWICK RACES 2400m 106 Final Fld Win Deductions Apply', amount_bet: '4', amount_won: '16', percentage: ''},
@@ -106,26 +109,6 @@ exports.seed = (knex, Promise) => {
         {id: 4503, person: 'Tom', couple: 'Bielby/Hart', sport: '', bet: 'England v Panama 4023 1st Goal ScorerW Indies v S Lanka-3rd Test 8835 Head to Head', amount_bet: '1', amount_won: 'Not winner', percentage: ''},
         {id: 4504, person: 'Deposit', couple: 'Deposit', sport: '', bet: 'Deposit - INTERNET TP06', amount_bet: '270', amount_won: '0', percentage: ''},
         {id: 4505, person: 'Free Bet', couple: 'Free Bet', sport: '', bet: 'Parramatta v Bulldogs 2303 Winning Team &amp; MarginCronulla v Canberra 2366 Points StartManly v Sydney 2756 Points StartCollingwood v Nth Melbourne 2836 Winning Team &amp; MarginEssendon v Fremantle 2848 Winning Team &amp; MarginGeelong v Melbourne 2860 Winning Team &amp; Margin', amount_bet: '5', amount_won: 'Not winner', percentage: ''},
-        {id: 4506, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'M2 R6 TE RAPA RACES 1600m 206 Final Fld Win Deductions Apply', amount_bet: '10', amount_won: '32', percentage: ''},
-        {id: 4507, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'M2 R6 TE RAPA RACES 1600m 1206 Final Fld Top3 Deductions Apply', amount_bet: '10', amount_won: '13.5', percentage: ''},
-        {id: 4508, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'England 7s v Samoa 7s 3292 Winning Team &amp; Margin', amount_bet: '5', amount_won: 'Not winner', percentage: ''},
-        {id: 4509, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'Waratahs v Highlanders 2140 Winning Team &amp; Margin', amount_bet: '5', amount_won: 'Not winner', percentage: ''},
-        {id: 4510, person: 'Lauren', couple: 'Bielby/Hart', sport: '', bet: 'Zimbabwe v Pakistan-2nd ODI 4971 Head to HeadSteel v Tactix 2976 Head to Head-Live NowPella v Daniel 5307 Head to HeadStakhovsky v Jung 5443 Head to Head', amount_bet: '1', amount_won: 'Not winner', percentage: ''},
-        {id: 4511, person: 'Lauren', couple: 'Bielby/Hart', sport: '', bet: 'FINAL-Anderson v Djokovic 5961 Head to Head-Live betting', amount_bet: '3', amount_won: 'Not winner', percentage: ''},
-        {id: 4512, person: 'Steven', couple: 'Scaglia/Scaglia', sport: '', bet: 'Bulldogs v South Sydney 2463 Head to Head-Live bettingBrisbane v NZ Warriors 2655 Head to Head-Live bettingGold Coast v Sydney 2783 Head to Head-Live bettingHawthorn v Brisbane 3013 Head to Head-Live NowGold Coast v Essendon 3043 Head to Head', amount_bet: '10', amount_won: 'Not winner', percentage: ''},
-        {id: 4513, person: 'Lauren', couple: 'Bielby/Hart', sport: '', bet: 'FINAL-Kerber v S Williams 5826 Sets Betting', amount_bet: '5', amount_won: 'Not winner', percentage: ''},
-        {id: 4514, person: 'Tom', couple: 'Bielby/Hart', sport: '', bet: 'France v Croatia 3601 To Lift the World Cup', amount_bet: '5', amount_won: 'Not winner', percentage: ''},
-        {id: 4515, person: 'Lauren', couple: 'Bielby/Hart', sport: '', bet: 'Kent v Hampshire 6140 Head to Head', amount_bet: '5', amount_won: '9.3', percentage: ''},
-        {id: 4516, person: 'Tom', couple: 'Bielby/Hart', sport: '', bet: 'Highlanders v Rebels 2111 Match ResultCrusaders v Blues 2175 Match ResultWaratahs v Brumbies 2237 Match Result', amount_bet: '5', amount_won: '20.7', percentage: ''},
-        {id: 4517, person: 'Tom', couple: 'Bielby/Hart', sport: '', bet: 'SF-Anderson v Isner 5813 Head to Head-Live betting', amount_bet: '5', amount_won: '9.3', percentage: ''},
-        {id: 4518, person: 'Steven', couple: 'Scaglia/Scaglia', sport: '', bet: 'M14 BRIS Race 7', amount_bet: '10', amount_won: 'Not winner', percentage: ''},
-        {id: 4519, person: 'Steven', couple: 'Scaglia/Scaglia', sport: '', bet: 'TE RAPA SPECIAL 210 Dougie/Rodrico Win Double', amount_bet: '10', amount_won: 'Not winner', percentage: ''},
-        {id: 4520, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'France v Argentina 3101 To ProgressUruguay v Portugal 3201 To ProgressSpain v Russia 3301 To ProgressCroatia v Denmark 3401 To ProgressBrazil v Mexico 3501 To ProgressBelgium v Japan 3601 To ProgressSweden v Switzerland 3701 To ProgressColombia v England 3801 To Progress', amount_bet: '5', amount_won: 'Not winner', percentage: ''},
-        {id: 4521, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'Netherlands v Argentina 75 Head to Head-Live Now', amount_bet: '5', amount_won: '9.2', percentage: ''},
-        {id: 4522, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'Highlanders v Chiefs 2211 Match Result', amount_bet: '10', amount_won: '25', percentage: ''},
-        {id: 4523, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'M11 R5 ROSEHILL RACES 1800m 1115 Final Fld Top3 Deductions Apply', amount_bet: '5', amount_won: 'Not winner', percentage: ''},
-        {id: 4524, person: 'Saul', couple: 'Burningham/Sim', sport: '', bet: 'NZ Warriors v Cronulla 2546 Winning Team &amp; Margin-Live Now', amount_bet: '5', amount_won: 'Not winner', percentage: ''},
-        {id: 4525, person: 'Lauren', couple: 'Bielby/Hart', sport: '', bet: 'Dogs', amount_bet: '1', amount_won: 'Not winner', percentage: ''},
       ])
     })
 }

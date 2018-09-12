@@ -1,5 +1,5 @@
 * { 
-  outline: 1px solid #947676 !important; 
+  outline: 1px transparent #947676 !important; 
   } 
   
    * { 
@@ -10,45 +10,46 @@
     }
 
     body {
-      background: #BEDAE5 !important;
-      font-family: 'Dosis', sans-serif, !important;
+      background: #F2F4EF !important;
+      font-family: 'Montserrat', sans-serif !important
 
     }
 
     p {
-      font-size: 0.85em;
+      font-size: 0.9em;
       text-align: center;
+      font-family: 'Questrial', sans-serif !important
     }
 
     .nav {
       padding: 2%;
-      background: #EECB27;
-      color: white;
+      color: #2F1812;
       width: 100%;
       margin-bottom: 2%;
+      border-bottom: solid 1px #607178;
     }
 
     .header {
       padding: 2%;
-      background: #1F1762;
-      color: white;
+      color: #607178;
       width: 100%;
       text-transform: uppercase;
-      margin-bottom: 0
+      margin-bottom: 0;
+      border-bottom: solid 1px #607178;
     }
 
     .heading {
-      background: #1F1762;
+      background: #607178;
       color: white;
       padding: 3%;
       margin-left: 0;
       margin-right: 0;
       text-align: center;
-      margin-top: 4%
+      margin-top: 6%
     }
 
     .small-heading {
-      background: #1F1762;
+      background: #01273C;
       color: white;
       padding: 3%;
       margin-left: 0;
@@ -58,7 +59,8 @@
     }
 
     .button {
-      margin: 2%
+      margin: 2%;
+      text-align: center
     }
 
     button {
@@ -66,9 +68,9 @@
     }
 
     .form {
-      background: #EECB27;
+      background: #01273C;
       text-align: left;
-      color: white;
+      color: #FBD1A7;
       padding-top: 3%
     }
 
@@ -85,13 +87,18 @@
       margin-left: 25%
     }
 
-    .p-form {
-      width: 50%
-    }
-
     h6 {
       text-align: center;
       margin-left: 20%;
       margin-right: 20%
+    }
+
+    input {
+      text-align: center
+    }
+
+    .p-form {
+      text-align: right;
+      font-size: 1em
     }
 

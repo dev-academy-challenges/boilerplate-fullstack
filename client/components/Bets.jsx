@@ -90,8 +90,6 @@ class Bets extends React.Component {
         <h1 className='header'>Bets</h1>
         <div className='nav'>
           <Link to="/"><button className="button">Home</button></Link>
-        </div>
-        <div className="button">
           <Link to="/addbet"><button>Add Bet</button></Link>
           <Link to="/datacheck"><button>Data Check</button></Link>
         </div>

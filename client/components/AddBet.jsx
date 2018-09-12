@@ -44,17 +44,31 @@ class Addbet extends React.Component {
 
         <div className='form'>
 
-          <p className="p-form">Couple: <input name='couple' value={this.state.couple} onChange={this.handleChange} /></p>
-          <p className="p-form">Person: <input name='person' value={this.state.person} onChange={this.handleChange} /></p>
-          <p className="p-form">Bet: <input name='bet' value={this.state.bet} onChange={this.handleChange} /></p>
-          <p className="p-form">amountBet: <input name='amountBet' value={this.state.amountBet} onChange={this.handleChange} /></p>
-          <p className="p-form">amountWon: <input name='amountWon' value={this.state.amountWon} onChange={this.handleChange} /></p>
-          <p className="p-form">Sport: <input name='sport' value={this.state.sport} onChange={this.handleChange} /></p>
-          <p className="p-form">percentage: <input name='percentage' value={this.state.percentage} onChange={this.handleChange} /></p>
-
-          <p>
-            <button className="button" onClick={this.handleClick}>Add Bet</button>
-          </p>
+          <div className="row">
+            <div className="col-md-3"><p className="p-form">Couple: </p> </div>
+            <div className="col-md-3"><input name='couple' value={this.state.couple} onChange={this.handleChange} /></div>
+          </div>
+          <div className="row">
+            <div className="col-md-3"><p className="p-form">Person: </p> </div>
+            <div className="col-md-3"><input name='person' value={this.state.person} onChange={this.handleChange} /></div>
+          </div>
+          <div className="row">
+            <div className="col-md-3"><p className="p-form">Bet: </p> </div>
+            <div className="col-md-3"><input name='bet' value={this.state.bet} onChange={this.handleChange} /></div>
+          </div>
+          <div className="row">
+            <div className="col-md-3"><p className="p-form">Amount Bet: </p> </div>
+            <div className="col-md-3"><input name='amountBet' value={this.state.amountBet} onChange={this.handleChange} /></div>
+          </div>
+          <div className="row">
+            <div className="col-md-3"><p className="p-form">Amount Won: </p> </div>
+            <div className="col-md-3"><input name='amountWon' value={this.state.amountWon} onChange={this.handleChange} /></div>
+          </div>
+          <div className="row">
+            <div className="col-md-3"><p className="p-form">Sport: </p> </div>
+            <div className="col-md-3"><input name='sport' value={this.state.sport} onChange={this.handleChange} /></div>
+          </div>
+          <button className="button" onClick={this.handleClick}>Add Bet</button>
         </div>
       </div>
 
