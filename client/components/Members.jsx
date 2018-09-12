@@ -32,7 +32,7 @@ class Members extends React.Component {
     // const couples = this.state.members.map((member, i) => {
     const bh = 'Bielby/Hart'
     const ss = `Scaglia's`
-    const bs = 'Burnginham/Sim'
+    const bs = 'Burningham/Sim'
     //   return <div key={i} className="col-md-4">
     //     <h5 className="heading">{bh}</h5>
     //   </div>
@@ -53,12 +53,37 @@ class Members extends React.Component {
                 return <ul><li>{item.person}</li></ul>
               }
             })}</p>
+            <div>{this.state.members.map(item => {
+              if (item.couple === bh) {
+                return <img src={item.individualPhoto} />
+              }
+            })} </div>
           </div>
           <div className="col-md-4">
             <h5 className="heading">{ss}</h5>
+            <p>{this.state.members.map(item => {
+              if (item.couple === ss) {
+                return <ul><li>{item.person}</li></ul>
+              }
+            })}</p>
+            <div>{this.state.members.map(item => {
+              if (item.couple === ss) {
+                return <img src={item.individualPhoto} />
+              }
+            })} </div>
           </div>
           <div className="col-md-4">
             <h5 className="heading">{bs}</h5>
+            <p>{this.state.members.map(item => {
+              if (item.couple === bs) {
+                return <ul><li>{item.person}</li></ul>
+              }
+            })}</p>
+            <div>{this.state.members.map(item => {
+              if (item.couple === bs) {
+                return <img src={item.individualPhoto} />
+              }
+            })} </div>
           </div>
 
         </div>
