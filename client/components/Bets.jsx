@@ -28,6 +28,10 @@ class Bets extends React.Component {
     this.fetchBets()
   }
 
+  componentDidUpdate () {
+    this.fetchBets()
+  }
+
   fetchBets () {
     // getBets is called from API client
     // we have imported the function at the top
