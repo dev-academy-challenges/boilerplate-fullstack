@@ -48,9 +48,9 @@ class Bets extends React.Component {
   didBetWin (betAmount) {
     const convertToNumber = Number(betAmount).toFixed(2)
     if (isNaN(convertToNumber)) {
-      return <div>Not a winner</div>
+      return <p>Not a winner</p>
     } else {
-      return <div>${convertToNumber}</div>
+      return <p>${convertToNumber}</p>
     }
   }
 
@@ -97,11 +97,11 @@ class Bets extends React.Component {
           <div className="col-md-2"><h5 className="heading">Couple</h5></div>
           <div className="col-md-2"><h5 className="heading">Person</h5></div>
           <div className="col-md-2"><h5 className="heading">Bet</h5></div>
-          <div className="col-md-2"><h5 className="heading">Amount Bet</h5></div>
-          <div className="col-md-2"><h5 className="heading">Amount Won</h5></div>
+          <div className="col-md-2"><h5 className="heading">$ Bet</h5></div>
+          <div className="col-md-2"><h5 className="heading">$ Won</h5></div>
           <div className="col-md-2"><h5 className="heading">Percentage</h5></div>
         </div>
-        <p>{bet}</p>
+        <div>{bet}</div>
       </div>
     )
   }

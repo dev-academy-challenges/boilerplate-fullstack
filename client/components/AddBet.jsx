@@ -13,7 +13,8 @@ class Addbet extends React.Component {
       bet: '',
       amountBet: '',
       amountWon: '',
-      percentage: ''
+      percentage: '',
+      submitted: false
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -29,7 +30,13 @@ class Addbet extends React.Component {
   handleClick (e) {
     e.preventDefault()
     addBets(this.state)
-    // .then(this.props.updateUserList)
+    this.thankYouForSubmit()
+  }
+
+  thankYouForSubmit () {
+    this.setState({
+      submitted: true
+    })
   }
 
   render () {
@@ -69,6 +76,10 @@ class Addbet extends React.Component {
             <div className="col-md-3"><input name='sport' value={this.state.sport} onChange={this.handleChange} /></div>
           </div>
           <button className="button" onClick={this.handleClick}>Add Bet</button>
+        </div>
+
+        <div className="row">
+          <div>{this.state.submitted === true ? <p>Thank you for Submitting</p> : <p></p> }</div>
         </div>
       </div>
 

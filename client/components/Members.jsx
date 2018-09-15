@@ -40,12 +40,12 @@ class Members extends React.Component {
           <Link to="/"><button className="button">Home</button></Link>
           <Link to="/bets"><button className="button">Bets</button></Link>
         </div>
-        <div className="row">
+        <div className="row members">
           <div className="col-md-4">
             <h5 className="heading">{bh}</h5>
             <p>{this.state.members.map(item => {
               if (item.couple === bh) {
-                return <div><p className="small-heading">{item.person}</p>
+                return <div><p className="member-heading">{item.person}</p>
                   <img src={item.individualPhoto} />
                 </div>
               }
@@ -56,7 +56,7 @@ class Members extends React.Component {
             <h5 className="heading">{ss}</h5>
             <p>{this.state.members.map(item => {
               if (item.couple === ss) {
-                return <div><p className="small-heading">{item.person}</p>
+                return <div><p className="member-heading">{item.person}</p>
                   <img src={item.individualPhoto} />
                 </div>
               }
@@ -67,7 +67,7 @@ class Members extends React.Component {
             <h5 className="heading">{bs}</h5>
             <p>{this.state.members.map(item => {
               if (item.couple === bs) {
-                return <div><p className="small-heading">{item.person}</p>
+                return <div><p className="member-heading">{item.person}</p>
                   <img src={item.individualPhoto} />
                 </div>
               }
