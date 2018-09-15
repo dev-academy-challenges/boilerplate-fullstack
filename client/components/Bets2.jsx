@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Header from './Header'
-
+import {Link} from 'react-router-dom'
 import {getBets} from '../apiClient'
 
 class Bets extends React.Component {
@@ -11,9 +10,6 @@ class Bets extends React.Component {
       bets: []
     }
     this.fetchBets = this.fetchBets.bind(this)
-    this.percentColour = this.percentColour.bind(this)
-    this.didBetWin = this.didBetWin.bind(this)
-    this.betPercentage = this.betPercentage.bind(this)
   }
 
   componentDidMount () {
@@ -64,52 +60,45 @@ class Bets extends React.Component {
     }
   }
 
-  handleClick (e) {
-    e.preventDefault()
-    addBets(this.state)
-    this.thankYouForSubmit()
-    this.redirectPage()
-  }
-
   render () {
     // RETRIEVING DATA FROM BETS TABLE ------------------------------------
     const bet = this.state.bets.map(bet => {
       const betPercent = (bet.amountWon / bet.amountBet) * 100
 
-      return <tr key={bet.id}>
+      return <div key={bet.id}>
+        <div className="bet-row">
+        </div>
+        <div className="row">
+          <div className="col-md-2"><p>{bet.couple}</p></div>
+          <div className="col-md-2"><p>{bet.person}</p></div>
+          <div className="col-md-2"><p>{bet.bet}</p></div>
+          <div className="col-md-2"><p>${Number(bet.amountBet).toFixed(2)}</p></div>
+          <div className="col-md-2"><p>{this.didBetWin(bet.amountWon)}</p></div>
+          <div className="col-md-2"><p className="percent" style={this.percentColour(betPercent)}>
+            {this.betPercentage(betPercent)}%</p>
+          </div>
 
-        <td>{bet.couple}</td>
-        <td>{bet.person}</td>
-        <td>{bet.bet}</td>
-        <td>${Number(bet.amountBet).toFixed(2)}</td>
-        <td>{this.didBetWin(bet.amountWon)}</td>
-        <td className="percent" style={this.percentColour(betPercent)}>
-          {this.betPercentage(betPercent)}%</td>
-
-        <td><button onClick={this.handleClick}>Edit</button></td>
-        <td><button onClick={this.handleClick}>Delete</button></td>
-      </tr>
+        </div>
+      </div>
     })
 
     return (
       <div className="container-fluid">
-        <div>
-          <Header header={Bets}/>
+        <h1 className='header'>Bets</h1>
+        <div className='nav'>
+          <Link to="/"><button className="button">Home</button></Link>
+          <Link to="/addbet"><button>Add Bet</button></Link>
+          <Link to="/datacheck"><button>Data Check</button></Link>
         </div>
-        <div className="header"><h5>Bets</h5></div>
-        <table className="table table-hover table-sm table-bordered">
-          <thead>
-            <tr>
-              <th className="heading" scope="col">Couple</th>
-              <th className="heading" scope="col">Person</th>
-              <th className="heading" scope="col">Bet</th>
-              <th className="heading" scope="col">$ Bet</th>
-              <th className="heading" scope="col">$ Won</th>
-              <th className="heading" scope="col">%</th>
-            </tr>
-          </thead>
-          <tbody>{bet}</tbody>
-        </table>
+        <div className="row">
+          <div className="col-md-2"><h5 className="heading">Couple</h5></div>
+          <div className="col-md-2"><h5 className="heading">Person</h5></div>
+          <div className="col-md-2"><h5 className="heading">Bet</h5></div>
+          <div className="col-md-2"><h5 className="heading">$ Bet</h5></div>
+          <div className="col-md-2"><h5 className="heading">$ Won</h5></div>
+          <div className="col-md-2"><h5 className="heading">Percentage</h5></div>
+        </div>
+        <div>{bet}</div>
       </div>
     )
   }

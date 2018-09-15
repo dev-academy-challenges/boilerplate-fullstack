@@ -1,5 +1,5 @@
 * { 
-  outline: 1px solid #947676 !important; 
+  outline: 1px transparent #947676 !important; 
   } 
   
    * { 
@@ -52,12 +52,7 @@
     .heading {
       background: #01273C;
       color: white;
-      padding: 3%;
-      margin-left: 0;
-      margin-right: 0;
       text-align: center;
-      margin-bottom: 4%;
-      margin-top: 4%
     }
 
     .button {
@@ -82,11 +77,6 @@
 
     a {
       margin-left: 2%
-    }
-
-    .percent {
-      width: 50%;
-      margin-left: 25%
     }
 
     h6 {
@@ -120,3 +110,4 @@
     .members {
       padding-top: 5%
     }
+

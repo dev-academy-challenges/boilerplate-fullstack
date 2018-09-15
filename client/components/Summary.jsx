@@ -9,6 +9,7 @@ class Summary extends React.Component {
       bets: []
     }
     this.fetchBets = this.fetchBets.bind(this)
+    this.percentColour = this.percentColour.bind(this)
   }
 
   componentDidMount () {
@@ -140,7 +141,7 @@ class Summary extends React.Component {
               <div className="col-md-3">
                 <h5 className="heading">Couples</h5>
                 <h6>Bielby/Hart</h6>
-                <h6>Scaglia's</h6>
+                <h6>Scaglia'/s</h6>
                 <h6>Burningham/Sim</h6>
               </div>
 
