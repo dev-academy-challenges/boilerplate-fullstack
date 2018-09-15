@@ -1,15 +1,20 @@
 import React from 'react'
 
 import Header from './Header'
-
-import {getBets} from '../apiClient'
+import {Link} from 'react-router-dom'
+// imported from API client
+import {getBets, deleteBets} from '../apiClient'
 
 class Bets extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      // bets initial state set to an empty
+      // array
       bets: []
     }
+    // We must bind our functions to this
+    // in order to use them in our render
     this.fetchBets = this.fetchBets.bind(this)
     this.percentColour = this.percentColour.bind(this)
     this.didBetWin = this.didBetWin.bind(this)
@@ -17,10 +22,18 @@ class Bets extends React.Component {
   }
 
   componentDidMount () {
+    // When component mounts,fetchBets runs
+    // We could put getBets in here but good
+    // Practice to split out from component did mount
     this.fetchBets()
   }
 
   fetchBets () {
+    // getBets is called from API client
+    // we have imported the function at the top
+    // Once it has been run we will receive
+    // The promise back and set it as the
+    // new state of bets
     return getBets()
       .then(bets => {
         this.setState({bets: bets})
@@ -28,6 +41,9 @@ class Bets extends React.Component {
   }
 
   percentColour (betPercentage) {
+    // This function is a conditional
+    // To change the style of the percentage
+    // based on the percent category
     const red = {background: '#EE3239', color: 'white'}
     const yellow = {background: '#FEC748', color: 'white'}
     const green = {background: '#499360', color: 'white'}
@@ -64,15 +80,12 @@ class Bets extends React.Component {
     }
   }
 
-  handleClick (e) {
-    e.preventDefault()
-    addBets(this.state)
-    this.thankYouForSubmit()
-    this.redirectPage()
+  handleDelete (e) {
+    // // sending the betID to deleteBets in API client
+    deleteBets(e.target.value)
   }
 
   render () {
-    // RETRIEVING DATA FROM BETS TABLE ------------------------------------
     const bet = this.state.bets.map(bet => {
       const betPercent = (bet.amountWon / bet.amountBet) * 100
 
@@ -87,7 +100,8 @@ class Bets extends React.Component {
           {this.betPercentage(betPercent)}%</td>
 
         <td><button onClick={this.handleClick}>Edit</button></td>
-        <td><button onClick={this.handleClick}>Delete</button></td>
+        <td><button value={bet.id} onClick={this.handleDelete}>Delete</button></td>
+        <td>{bet.id}</td>
       </tr>
     })
 
@@ -96,6 +110,10 @@ class Bets extends React.Component {
         <div>
           <Header header={Bets}/>
         </div>
+        <div>
+          <Link to="/addbet"><button>Add Bet</button></Link>
+        </div>
+
         <div className="header"><h5>Bets</h5></div>
         <table className="table table-hover table-sm table-bordered">
           <thead>
@@ -106,6 +124,8 @@ class Bets extends React.Component {
               <th className="heading" scope="col">$ Bet</th>
               <th className="heading" scope="col">$ Won</th>
               <th className="heading" scope="col">%</th>
+              <th className="heading" scope="col"></th>
+              <th className="heading" scope="col"></th>
             </tr>
           </thead>
           <tbody>{bet}</tbody>

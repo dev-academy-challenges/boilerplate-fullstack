@@ -23,12 +23,21 @@ class Addbet extends React.Component {
     this.redirectPage = this.redirectPage.bind(this)
   }
 
+  // This function is triggerd by an onChange
+  // event to set the state with what is entered in the
+  // value field of the form
   handleChange (e) {
     this.setState({
+      // Writing it this way with [] will allow us to
+      // obtain all keys and values
       [e.target.name]: e.target.value
     })
   }
 
+  // This functions is triggered by an onClick event
+  // to submit the form. We are passing what we have just
+  // set as state from the onChange function to addBets
+  // function on the API client
   handleClick (e) {
     e.preventDefault()
     addBets(this.state)
