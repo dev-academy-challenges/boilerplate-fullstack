@@ -1,0 +1,113 @@
+* { 
+  outline: 1px transparent #947676 !important; 
+  } 
+  
+   * { 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    -ms-box-sizing: border-box; 
+    box-sizing: border-box; 
+    }
+
+    body {
+      background: #F2F4EF !important;
+      font-family: 'Montserrat', sans-serif !important
+
+    }
+
+    p {
+      font-size: 0.9em;
+      text-align: center;
+      font-family: 'Questrial', sans-serif !important;
+      padding-top: 1%
+    }
+
+    .nav {
+      padding: 2%;
+      color: #2F1812;
+      width: 100%;
+      margin-bottom: 5%;
+      border-bottom: solid 1px #607178;
+    }
+
+    .header {
+      padding: 2%;
+      color: #607178;
+      width: 100%;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      border-bottom: solid 1px #607178;
+    }
+
+    .small-heading {
+      background: #607178;
+      color: white;
+      padding: 3%;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+      margin-top: 4%
+    }
+
+    .heading {
+      background: #01273C;
+      color: white;
+      text-align: center;
+    }
+
+    .button {
+      margin: 2%;
+      text-align: center
+    }
+
+    button {
+      margin: 2%;
+    }
+
+    .form {
+      background: #01273C;
+      text-align: left;
+      color: #FBD1A7;
+      padding-top: 3%
+    }
+
+    .bet-row {
+      border: solid 0px white;
+    }
+
+    a {
+      margin-left: 2%
+    }
+
+    h6 {
+      text-align: center;
+      margin-left: 20%;
+      margin-right: 20%
+    }
+
+    input {
+      text-align: center
+    }
+
+    .p-form {
+      text-align: right;
+      font-size: 1.3em
+    }
+
+
+    .member-heading {
+      background: #607178;
+      color: white;
+      padding: 3%;
+      margin-left: 25%;
+      margin-right: 25%;
+      text-align: center;
+      margin-top: 4%;
+      width: 50%;
+      padding-top: 3%
+    }
+
+    .members {
+      padding-top: 5%
+    }
+
