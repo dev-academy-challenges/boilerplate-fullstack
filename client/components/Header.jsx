@@ -12,7 +12,6 @@ export default function Header (props) {
       <div className="nav">
         <Link to="/"><button>Home</button></Link>
         <Link to="/bets"><button>Bets</button></Link>
-        <Link to="/bets2"><button>Bets2</button></Link>
         <Link to="/members"><button>Members</button></Link>
         <Link to="/datacheck"><button>Data Check</button></Link>
       </div>

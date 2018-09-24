@@ -41,16 +41,23 @@ export function getMembers () {
 // Bets has passed us an id of the bet it wants
 // The database to delete
 export function deleteBets (betId) {
-  console.log('betId', betId)
   return request
   // Should be api/v1/bets/:id
     .del(`/api/v1/bets/${betId}`, betId)
     .then(res => {
-      console.log('success')
       // eslint-disable-next-line no-console
+      console.log('success')
     })
     .catch(err => {
       // eslint-disable-next-line no-console
       console.log(err.message)
     })
 }
+
+// Bets.jsx has passed us an id of the bet it wants
+// to edit in the database
+// export function editBets (betId) {
+//   return request
+//   // should be api/v1/bets/edit/:id
+//   .
+// }

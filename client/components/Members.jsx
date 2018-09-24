@@ -3,6 +3,12 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {getMembers} from '../apiClient'
 
+function add () {
+  return 1 + 1
+}
+
+add()
+
 class Members extends React.Component {
   constructor (props) {
     super(props)

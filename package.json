@@ -25,8 +25,12 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "knex": "^0.15.2",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "sqlite3": "^4.0.2"
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "sqlite3": "^4.0.2",
+    "thunk": "^0.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -41,7 +45,7 @@
     "nodemon": "^1.17.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "superagent": "^3.8.2",
+    "superagent": "^4.0.0-beta.5",
     "webpack": "3"
   }
 }

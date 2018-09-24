@@ -3,7 +3,8 @@ import React from 'react'
 import Header from './Header'
 import {Link} from 'react-router-dom'
 // imported from API client
-import {getBets, deleteBets} from '../apiClient'
+import {getBets, deleteBets, editBets} from '../apiClient'
+import EditBet from './EditBet'
 
 class Bets extends React.Component {
   constructor (props) {
@@ -11,7 +12,10 @@ class Bets extends React.Component {
     this.state = {
       // bets initial state set to an empty
       // array
-      bets: []
+      bets: [],
+      edit: false,
+      betID: ''
+
     }
     // We must bind our functions to this
     // in order to use them in our render
@@ -19,6 +23,7 @@ class Bets extends React.Component {
     this.percentColour = this.percentColour.bind(this)
     this.didBetWin = this.didBetWin.bind(this)
     this.betPercentage = this.betPercentage.bind(this)
+    this.handleEdit = this.handleEdit.bind(this)
   }
 
   componentDidMount () {
@@ -29,6 +34,10 @@ class Bets extends React.Component {
   }
 
   componentDidUpdate () {
+    this.fetchBets()
+  }
+
+  componentWillUnmount () {
     this.fetchBets()
   }
 
@@ -89,6 +98,10 @@ class Bets extends React.Component {
     deleteBets(e.target.value)
   }
 
+  handleEdit (e) {
+    editBets(e.target.value)
+  }
+
   render () {
     const bet = this.state.bets.map(bet => {
       const betPercent = (bet.amountWon / bet.amountBet) * 100
@@ -103,37 +116,41 @@ class Bets extends React.Component {
         <td className="percent" style={this.percentColour(betPercent)}>
           {this.betPercentage(betPercent)}%</td>
 
-        <td><button onClick={this.handleClick}>Edit</button></td>
+        <td><button value={bet.id} onClick={this.handleEdit}>Edit</button></td>
         <td><button value={bet.id} onClick={this.handleDelete}>Delete</button></td>
-        <td>{bet.id}</td>
       </tr>
     })
 
     return (
-      <div className="container-fluid">
-        <div>
-          <Header header={Bets}/>
-        </div>
-        <div>
-          <Link to="/addbet"><button>Add Bet</button></Link>
-        </div>
 
-        <div className="header"><h5>Bets</h5></div>
-        <table className="table table-hover table-sm table-bordered">
-          <thead>
-            <tr>
-              <th className="heading" scope="col">Couple</th>
-              <th className="heading" scope="col">Person</th>
-              <th className="heading" scope="col">Bet</th>
-              <th className="heading" scope="col">$ Bet</th>
-              <th className="heading" scope="col">$ Won</th>
-              <th className="heading" scope="col">%</th>
-              <th className="heading" scope="col"></th>
-              <th className="heading" scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>{bet}</tbody>
-        </table>
+      <div>{this.state.edit ? <EditBet id={this.state.editId} />
+
+        : <div className="container-fluid">
+          <div>
+            <Header header={Bets}/>
+          </div>
+          <div>
+            <Link to="/addbet"><button>Add Bet</button></Link>
+          </div>
+
+          <div className="header"><h5>Bets</h5></div>
+          <table className="table table-hover table-sm table-bordered">
+            <thead>
+              <tr>
+                <th className="heading" scope="col">Couple</th>
+                <th className="heading" scope="col">Person</th>
+                <th className="heading" scope="col">Bet</th>
+                <th className="heading" scope="col">$ Bet</th>
+                <th className="heading" scope="col">$ Won</th>
+                <th className="heading" scope="col">%</th>
+                <th className="heading" scope="col"></th>
+                <th className="heading" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>{bet}</tbody>
+          </table>
+        </div>
+      }
       </div>
     )
   }

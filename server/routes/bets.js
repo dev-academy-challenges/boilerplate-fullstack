@@ -16,7 +16,8 @@ router.post('/addbet', (req, res) => {
       res.sendStatus(200)
     })
     .catch(err => {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
+      res.status(500).send('DATABASE ERROR: ' +
+       err.message)
     })
 })
 
@@ -45,7 +46,8 @@ router.delete('/:id', (req, res) => {
       res.json({})
     })
     .catch(err => {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
+      res.status(500).send('DATABASE ERROR: ' +
+      err.message)
     })
 })
 
