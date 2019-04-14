@@ -5,8 +5,8 @@ To get started:
 ```
 git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
 cd [your-project-name]
-yarn # to install dependencies
-yarn dev # to start the dev server
+npm install # to install dependencies
+npm run dev # to start the dev server
 ```
 
 You can find the server running on [http://localhost:3000](http://localhost:3000).
