@@ -1,13 +1,10 @@
 import React from 'react'
 
-import {getFruits} from '../apiClient'
+import { getFruits } from '../apiClient'
 
 class App extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      fruits: []
-    }
+  state = {
+    fruits: []
   }
 
   componentDidMount () {

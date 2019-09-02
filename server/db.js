@@ -2,7 +2,8 @@ module.exports = {
   getFruits
 }
 
+let fruits = ['banana', 'apple', 'feijoa']
+
 function getFruits () {
-  const fruits = ['banana', 'apple', 'feijoa']
   return Promise.resolve(fruits)
 }

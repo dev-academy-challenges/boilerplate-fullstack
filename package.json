@@ -4,14 +4,23 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server & npm run build --watch",
+    "dev": "run-p dev:client dev:server",
+    "dev:client": "npm run build --watch",
+    "dev:server": "nodemon server",
     "build": "webpack --config client/webpack.config.js",
-    "test": "jest"
+    "dev:server": "webpack-dev-server --hot --inline",
+    "server": "node server",
+    "start": "run-s build server",
+    "test": "jest --verbose --watchAll"
   },
   "babel": {
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
     ]
   },
   "jest": {
@@ -25,6 +34,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
@@ -36,10 +47,12 @@
     "jest": "^24.7.1",
     "jsdom": "^14.0.0",
     "nodemon": "^1.18.11",
+    "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "superagent": "^5.0.2",
     "webpack": "4",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }
