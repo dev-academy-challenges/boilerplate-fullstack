@@ -5,10 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "run-p dev:client dev:server",
-    "dev:client": "npm run build --watch",
+    "dev:client": "npm run build -- --watch",
     "dev:server": "nodemon server",
     "build": "webpack --config client/webpack.config.js",
-    "dev:server": "webpack-dev-server --hot --inline",
     "server": "node server",
     "start": "run-s build server",
     "test": "jest --verbose --watchAll"
