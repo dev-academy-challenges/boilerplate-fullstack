@@ -29,7 +29,10 @@
     ]
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "knex": "^0.19.3",
+    "pg": "^7.12.1",
+    "sqlite3": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

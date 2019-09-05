@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
   db.getFruits()
-    .then(fruits => {
-      res.json({fruits})
+    .then(results => {
+      res.json({fruits: results.map(fruit => fruit.name)})
     })
 })
 
