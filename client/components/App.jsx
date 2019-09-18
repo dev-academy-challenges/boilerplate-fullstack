@@ -17,7 +17,7 @@ class App extends React.Component {
   render () {
     return (
       <div className='app'>
-        <h1>Fullstack Boilerplate</h1>
+        <h1>Fullstack Boilerplate - with Fruits!</h1>
         <ul>
           {this.state.fruits.map(fruit => (
             <li key={fruit}>{fruit}</li>
