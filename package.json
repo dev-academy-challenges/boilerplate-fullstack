@@ -24,8 +24,8 @@
   },
   "jest": {
     "setupFiles": [
-      "./test/client/config/jsdom.js",
-      "./test/client/config/enzyme.js"
+      "./tests/client/config/jsdom.js",
+      "./tests/client/config/enzyme.js"
     ]
   },
   "dependencies": {

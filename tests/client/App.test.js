@@ -1,7 +1,7 @@
 import React from 'react'
 import Enzyme, {shallow, render, mount} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import './setup-env'
+import './config/enzyme'
 
 import App from '../../client/components/App'
 App.prototype.componentDidMount = () => {}
