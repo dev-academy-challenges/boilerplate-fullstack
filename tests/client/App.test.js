@@ -1,18 +1,17 @@
 import React from 'react'
-import {shallow, render, mount} from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
+import { shallow, render, mount } from 'enzyme'
 
 import App from '../../client/components/App'
 App.prototype.componentDidMount = () => {}
 
-test('test runner is working', () => {
+test('runner is working', () => {
   expect(true).toBeTruthy()
 })
 
 test('<App> root has className of app', () => {
   const wrapper = shallow(<App />)
   const root = wrapper.find('.app')
-  expect(root.length).toBe(1)
+  expect(root).toHaveLength(1)
 })
 
 test('page header includes fruit', () => {
@@ -23,6 +22,6 @@ test('page header includes fruit', () => {
 
 test('renders an <li> for each fruit', () => {
   const wrapper = mount(<App />)
-  wrapper.setState({fruits: ['orange', 'persimmons', 'kiwi fruit']})
-  expect(wrapper.find('li').length).toBe(3)
+  wrapper.setState({ fruits: ['orange', 'persimmons', 'kiwi fruit'] })
+  expect(wrapper.find('li')).toHaveLength(3)
 })

@@ -1,6 +1,6 @@
 require('@babel/register')
 
-const {JSDOM} = require('jsdom')
+const { JSDOM } = require('jsdom')
 
 const dom = new JSDOM('<body></body>', {
   beforeParse (window) {

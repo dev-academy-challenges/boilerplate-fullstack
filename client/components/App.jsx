@@ -10,7 +10,11 @@ class App extends React.Component {
   componentDidMount () {
     getFruits()
       .then(fruits => {
-        this.setState({fruits})
+        this.setState({ fruits })
+        return null
+      })
+      .catch(() => {
+        console.log('Error getting fruit.')
       })
   }
 
