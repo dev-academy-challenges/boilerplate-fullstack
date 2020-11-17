@@ -1,21 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-import { getFruits } from '../apiClient'
+import { fetchFruits } from '../actions'
 
-class App extends React.Component {
+export class App extends React.Component {
   state = {
     fruits: []
   }
 
   componentDidMount () {
-    getFruits()
-      .then(fruits => {
-        this.setState({ fruits })
-        return null
-      })
-      .catch(() => {
-        console.log('Error getting fruit.')
-      })
+    this.props.dispatch(fetchFruits())
   }
 
   render () {
@@ -23,7 +17,7 @@ class App extends React.Component {
       <div className='app'>
         <h1>Fullstack Boilerplate - with Fruits!</h1>
         <ul>
-          {this.state.fruits.map(fruit => (
+          {(this.props.fruits).map(fruit => (
             <li key={fruit}>{fruit}</li>
           ))}
         </ul>
@@ -32,4 +26,10 @@ class App extends React.Component {
   }
 }
 
-export default App
+function mapStateToProps (globalState) {
+  return {
+    fruits: globalState.fruits
+  }
+}
+
+export default connect(mapStateToProps)(App)
