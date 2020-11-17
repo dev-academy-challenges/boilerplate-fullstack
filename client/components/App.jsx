@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getFruits } from '../apiClient'
+import { getFruits } from '../apis/fruits'
 
 class App extends React.Component {
   state = {
