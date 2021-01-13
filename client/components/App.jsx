@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
-import { connect, useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 
 import { fetchFruits } from '../actions'
 
 export function App (props) {
-  const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchFruits())
+    props.dispatch(fetchFruits())
   }, [])
 
   return (
