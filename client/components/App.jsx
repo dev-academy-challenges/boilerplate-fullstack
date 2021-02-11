@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchFruits } from '../actions'
 
 const App = (props) => {
-
   useEffect(() => {
     props.dispatch(fetchFruits())
   })
@@ -29,4 +28,3 @@ const mapStateToProps = (globalState) => {
 }
 
 export default connect(mapStateToProps)(App)
-
