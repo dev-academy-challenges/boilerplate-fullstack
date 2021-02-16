@@ -24,6 +24,6 @@ This repo includes:
 * a single React component (`<App />`)
 * an example database module (`server/db/fruits.js`)
 * an API client module (`client/apis/fruits.js`)
-* configuration for Jest and Enzyme (including JSDOM)
+* configuration for Jest and testing library
 * configuration for server-side debugging in VS Code
 * a single client-side test (`client/components/App.test.js`)
