@@ -1,27 +1,32 @@
 import React from 'react'
-import { shallow, render, mount } from 'enzyme'
+import { Provider } from 'react-redux'
+import { screen, render } from '@testing-library/react'
 
-import { App } from '../../client/components/App'
-App.prototype.componentDidMount = () => {}
+import App from './App'
+import store from '../store'
+import { fetchFruits } from '../actions'
 
-test('runner is working', () => {
-  expect(true).toBeTruthy()
-})
+jest.mock('../actions')
 
-test('<App> root has className of app', () => {
-  const wrapper = shallow(<App fruits={[]} />)
-  const root = wrapper.find('.app')
-  expect(root).toHaveLength(1)
-})
+fetchFruits.mockImplementation(() => () => {})
 
 test('page header includes fruit', () => {
-  const wrapper = render(<App fruits={[]} />)
-  const h1 = wrapper.find('h1')
-  expect(h1.text()).toMatch(/Fruit/)
+  render(<Provider store={store}><App /></Provider>)
+  const heading = screen.getByRole('heading')
+  expect(heading.innerHTML).toMatch(/Fruit/)
 })
 
 test('renders an <li> for each fruit', () => {
   const fruits = ['orange', 'persimmons', 'kiwi fruit']
-  const wrapper = mount(<App fruits={fruits} />)
-  expect(wrapper.find('li')).toHaveLength(3)
+  jest.spyOn(store, 'getState')
+  store.getState.mockImplementation(() => ({ fruits }))
+
+  render(<Provider store={store}><App /></Provider>)
+  const li = screen.getAllByRole('listitem')
+  expect(li).toHaveLength(3)
+})
+
+test('dispatches fetchFruits action', () => {
+  render(<Provider store={store}><App /></Provider>)
+  expect(fetchFruits).toHaveBeenCalled()
 })

@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 
 import { fetchFruits } from '../actions'
 
-const App = (props) => {
+function App (props) {
   useEffect(() => {
     props.dispatch(fetchFruits())
-  })
+  }, [])
 
   return (
     <>
