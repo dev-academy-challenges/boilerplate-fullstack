@@ -27,3 +27,4 @@ This repo includes:
 * configuration for Jest and testing library
 * configuration for server-side debugging in VS Code
 * a single client-side test (`client/components/App.test.js`)
+* a single slice with an async thunk (`client/slices/fruits.js`)
