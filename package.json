@@ -11,13 +11,15 @@
     "test": "jest",
     "test:watch": "jest --noStackTrace --watchAll",
     "dev": "run-p dev:client dev:server",
-    "dev:client": "npm run webpack -- --watch",
+    "dev:client": "run-p webpack:watch tailwind",
     "dev:server": "nodemon --watch server server/index.js",
     "build": "run-p build:client build:server",
     "build:client": "npm run webpack -- --mode production",
     "build:server": "npm run knex -- migrate:latest",
     "lint": "eslint --ext .js,.jsx .",
+    "tailwind": "tailwindcss -w -i ./client/tailwind.css -o ./server/public/styles.css",
     "webpack": "webpack --config ./client/webpack.config.js",
+    "webpack:watch": "npm run webpack -- --watch",
     "knex": "knex --knexfile ./server/db/knexfile.js"
   },
   "babel": {
@@ -71,6 +73,7 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "supertest": "6.0.1",
+    "tailwindcss": "^3.0.24",
     "webpack": "5.9.0",
     "webpack-cli": "4.2.0"
   },
